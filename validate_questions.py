@@ -1,106 +1,96 @@
-"""
-validate_questions.py — Question Bank Integrity & Schema Validator
-===================================================================
-Run this script to verify that backend/data/questions.json adheres to all
-DGCA AeroBeacon standards, valid topics, and proper data types.
-"""
-
 import json
-import sys
-from pathlib import Path
+import time
+from semantic_explainer import SemanticExplainer
 
-# Ensure UTF-8 output on Windows console
-if hasattr(sys.stdout, "reconfigure"):
-    sys.stdout.reconfigure(encoding="utf-8")
+def run_validation_suite():
+    print("========================================================================")
+    print("      AVIATION METEOROLOGY - SEMANTIC ML BENCHMARK & VALIDATION         ")
+    print("========================================================================")
+    
+    start_time = time.time()
+    explainer = SemanticExplainer()
+    init_duration = time.time() - start_time
+    print(f"[+] Semantic ML Pipeline ready in {init_duration:.2f}s\n")
 
-VALID_TOPICS = {
-    "Atmosphere", "Atmospheric Pressure", "Temperature", "Air Density",
-    "Humidity", "Winds", "Visibility and Fog", "Vertical Motion and Clouds",
-    "Stability and Instability", "Optical Phenomena", "Precipitation",
-    "Ice Accretion", "Thunderstorm", "Airmasses Fronts and Western Disturbances",
-    "Jet Streams", "Clear Air Turbulence", "Tropical Systems", "Climatology of India",
-    "General Circulation", "Meteorological Services for Aviation",
-    "Aviation Weather Reports (METAR and SPECI)", "Aerodrome Forecasts (TAF and TREND)",
-    "SIGMET and AIRMET Warnings", "World Area Forecast System (WAFS and SIGWX)",
-    "Radar Meteorology", "Satellite Meteorology", "Altimetry and Pressure Settings",
-    "Flight Weather Planning and Route Hazards"
-}
+    test_scenarios = [
+        {
+            "category": "Atmosphere & Structure (Synonym / Rephrased)",
+            "query": "What is the lowest layer of Earth's atmosphere?",
+            "expected_keyword": "Troposphere"
+        },
+        {
+            "category": "Thermal Structure & Inversion",
+            "query": "At 80 km altitude in mesopause, what is the temperature in Kelvin?",
+            "expected_keyword": "173"
+        },
+        {
+            "category": "Altimetry & Pressure Settings",
+            "query": "When flying from High to Low pressure area, does altimeter over read or under read?",
+            "expected_keyword": "Over"
+        },
+        {
+            "category": "Winds & Coriolis Force",
+            "query": "Where is the Coriolis force maximum on the globe?",
+            "expected_keyword": "Poles"
+        },
+        {
+            "category": "Clouds & Optical Phenomena",
+            "query": "Which cloud causes the Halo optical ring around the sun or moon?",
+            "expected_keyword": "CS"
+        },
+        {
+            "category": "Ice Accretion & Aviation Hazards",
+            "query": "Which type of ice on airframe is glassy and hard to break?",
+            "expected_keyword": "Glaze"
+        },
+        {
+            "category": "Thunderstorm & Convective Hazards",
+            "query": "What is the concentrated downdraught from TS of diameter less than 4 km called?",
+            "expected_keyword": "Microburst"
+        }
+    ]
 
-def validate(filepath="backend/data/questions.json"):
-    path = Path(filepath)
-    if not path.exists():
-        print(f"Error: {filepath} not found.")
-        sys.exit(1)
+    passed = 0
+    total = len(test_scenarios)
 
-    with open(path, "r", encoding="utf-8") as f:
-        try:
-            questions = json.load(f)
-        except Exception as e:
-            print(f"Error: JSON parsing failed: {e}")
-            sys.exit(1)
+    for i, test in enumerate(test_scenarios, 1):
+        print("-" * 75)
+        print(f"Test #{i} [{test['category']}]")
+        print(f"Query: \"{test['query']}\"")
+        
+        t0 = time.time()
+        result = explainer.explain(test['query'])
+        latency = (time.time() - t0) * 1000
+        
+        top = result["top_concept"]
+        matched_q = top["question"]
+        ans = top["correct_answer"]
+        expl = top["scientific_explanation"]
+        conf = top["confidence_level"]
+        score = top["neural_relevance_score"]
 
-    print(f"Loaded {len(questions)} questions from {filepath} for validation...")
-    errors = []
-    topic_counts = {}
-    diff_counts = {"Easy": 0, "Medium": 0, "Hard": 0}
+        # Check semantic alignment
+        is_hit = (
+            test["expected_keyword"].lower() in ans.lower() or
+            test["expected_keyword"].lower() in expl.lower() or
+            test["expected_keyword"].lower() in matched_q.lower()
+        )
 
-    for idx, q in enumerate(questions):
-        qid = q.get("id", f"Index_{idx}")
-
-        # Check required fields
-        for field in ["id", "text", "topic", "options", "correctIndex", "difficulty", "avgTimeTaken", "pastAccuracy"]:
-            if field not in q:
-                errors.append(f"[{qid}] Missing required field '{field}'")
-
-        # Validate topic
-        topic = q.get("topic")
-        if topic not in VALID_TOPICS:
-            errors.append(f"[{qid}] Invalid topic: '{topic}'")
+        if is_hit:
+            passed += 1
+            status_str = "PASSED [OK]"
         else:
-            topic_counts[topic] = topic_counts.get(topic, 0) + 1
+            status_str = "FLAGGED"
 
-        # Validate options & correctIndex
-        opts = q.get("options", [])
-        if not isinstance(opts, list) or len(opts) < 2:
-            errors.append(f"[{qid}] 'options' must be a list with at least 2 choices")
-        else:
-            c_idx = q.get("correctIndex")
-            if not isinstance(c_idx, int) or c_idx < 0 or c_idx >= len(opts):
-                errors.append(f"[{qid}] 'correctIndex' ({c_idx}) is out of range for {len(opts)} options")
+        print(f"Status:        {status_str} (Latency: {latency:.1f}ms)")
+        print(f"Matched Q:     {matched_q}")
+        print(f"Answer:        ({top['correct_option']}) {ans}")
+        print(f"Neural Conf:   {conf} (Logit: {score})")
+        print(f"Explanation:   {expl[:120]}...")
 
-        # Validate difficulty
-        diff = q.get("difficulty")
-        if diff not in ["Easy", "Medium", "Hard"]:
-            errors.append(f"[{qid}] Invalid difficulty: '{diff}'")
-        else:
-            diff_counts[diff] = diff_counts.get(diff, 0) + 1
-
-        # Validate pastAccuracy (0.0 to 1.0)
-        acc = q.get("pastAccuracy", 0)
-        if not isinstance(acc, (int, float)) or not (0.0 <= acc <= 1.0):
-            errors.append(f"[{qid}] 'pastAccuracy' ({acc}) must be a number between 0.0 and 1.0")
-
-        # Validate avgTimeTaken (10s to 300s)
-        time_taken = q.get("avgTimeTaken", 0)
-        if not isinstance(time_taken, (int, float)) or not (10 <= time_taken <= 300):
-            errors.append(f"[{qid}] 'avgTimeTaken' ({time_taken}) must be between 10 and 300 seconds")
-
-    if errors:
-        print(f"\n❌ Validation FAILED with {len(errors)} issues:")
-        for err in errors[:20]:
-            print(f"  • {err}")
-        if len(errors) > 20:
-            print(f"  ... and {len(errors) - 20} more issues.")
-        sys.exit(1)
-    else:
-        print("\n✅ VALIDATION PASSED: All questions are structurally sound and compliant!")
-        print(f"\nTotal Questions: {len(questions)}")
-        print(f"Total Topics: {len(topic_counts)} / 28 covered")
-        print("\nDifficulty Distribution:")
-        for d in ["Easy", "Medium", "Hard"]:
-            cnt = diff_counts[d]
-            pct = (cnt / len(questions)) * 100
-            print(f"  • {d:6s}: {cnt:4d} ({pct:5.1f}%)")
+    print("========================================================================")
+    print(f"Semantic Validation Score: {passed}/{total} ({passed/total * 100:.1f}%) Passed")
+    print("========================================================================")
 
 if __name__ == "__main__":
-    validate()
+    run_validation_suite()

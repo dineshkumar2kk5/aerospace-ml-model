@@ -1,243 +1,141 @@
-"""
-semantic_embedder.py — Vectorize Aviation Meteorology Questions via Sentence Transformers
-========================================================================================
-
-Generates dense 384-dimensional semantic embeddings for all 806 DGCA exam questions
-extracted from IC Joshi's "Aviation Meteorology" (7th Edition, 2023).
-
-Model: 'all-MiniLM-L6-v2' (runs locally on CPU, ~80MB, zero recurring API cost).
-
-Outputs:
-    - embeddings.npy : NumPy array of shape (806, 384) containing normalized embeddings.
-    - embedder.pkl   : Serialized SentenceTransformer instance for offline inference.
-
-Usage:
-    python semantic_embedder.py
-    python semantic_embedder.py --csv dataset_semantic.csv --batch-size 32
-"""
-
-import argparse
-import logging
+import json
 import os
-import sys
-from pathlib import Path
-from typing import List, Optional, Tuple
-
-import joblib
 import numpy as np
-import pandas as pd
+import torch
+from pathlib import Path
+from typing import List, Dict, Any, Optional
 from sentence_transformers import SentenceTransformer
 
-# ── Windows Console UTF-8 Resilience ──────────────────────────────────────────
-if sys.platform == "win32":
-    try:
-        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
-    except Exception:
-        pass
-
-# ── Logging Setup ─────────────────────────────────────────────────────────────
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s",
-    datefmt="%Y-%m-%d %H:%M:%S",
-)
-logger = logging.getLogger("semantic_embedder")
-
-
-def resolve_file_path(filename: str) -> Path:
+class SemanticEmbedder:
     """
-    Search for a file across the current directory, script directory, and ml/ directory.
-
-    Args:
-        filename: Name or relative path of the file.
-
-    Returns:
-        Resolved Path object.
+    Dense Neural Vector Embedder for Aviation Meteorology.
+    Uses Sentence Transformers to map concepts and questions into high-dimensional latent space.
     """
-    candidates = [
-        Path(filename),
-        Path(__file__).resolve().parent / filename,
-        Path(__file__).resolve().parent / "ml" / filename,
-        Path(__file__).resolve().parent.parent / "ml" / filename,
-    ]
-    for candidate in candidates:
-        if candidate.exists():
-            return candidate.resolve()
-    return Path(filename).resolve()
+    def __init__(
+        self,
+        model_name: str = "sentence-transformers/all-MiniLM-L6-v2",
+        cache_dir: str = "./semantic_cache",
+        device: Optional[str] = None
+    ):
+        if device is None:
+            self.device = "cuda" if torch.cuda.is_available() else "cpu"
+        else:
+            self.device = device
+            
+        print(f"[*] SemanticEmbedder initializing on device: {self.device.upper()}")
+        print(f"[*] Loading Dense Bi-Encoder Model: {model_name}")
+        self.model = SentenceTransformer(model_name, device=self.device)
+        self.cache_dir = Path(cache_dir)
+        self.cache_dir.mkdir(parents=True, exist_ok=True)
+        
+        self.documents: List[Dict[str, Any]] = []
+        self.embeddings: Optional[np.ndarray] = None
 
+    def build_index(self, json_path: str, force_rebuild: bool = False):
+        """
+        Builds or loads cached embeddings from disk.
+        """
+        emb_file = self.cache_dir / "embeddings.npy"
+        meta_file = self.cache_dir / "metadata.json"
 
-def build_semantic_text(df: pd.DataFrame) -> List[str]:
-    """
-    Concatenate question text and available multiple choice options into a unified
-    dense semantic context string for embedding.
+        if not force_rebuild and emb_file.exists() and meta_file.exists():
+            print(f"[+] Loading cached semantic index from {self.cache_dir}...")
+            self.embeddings = np.load(emb_file)
+            with open(meta_file, "r", encoding="utf-8") as f:
+                self.documents = json.load(f)
+            print(f"[+] Cached index loaded successfully! Total records: {len(self.documents)}, Dim: {self.embeddings.shape[1]}")
+            return
 
-    Args:
-        df: DataFrame containing 'question', 'opt_a', 'opt_b', 'opt_c', 'opt_d' columns.
+        print(f"[*] Ingesting knowledge base from: {json_path}")
+        with open(json_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
 
-    Returns:
-        List of concatenated semantic text strings.
-    """
-    opt_cols = ["opt_a", "opt_b", "opt_c", "opt_d"]
-    for col in ["question"] + opt_cols:
-        if col not in df.columns:
-            df[col] = ""
+        questions = data.get("questions", [])
+        corpus_texts = []
+        self.documents = []
 
-    # Gracefully fill NaN with empty strings
-    clean_q = df["question"].fillna("").astype(str).str.strip()
-    clean_a = df["opt_a"].fillna("").astype(str).str.strip()
-    clean_b = df["opt_b"].fillna("").astype(str).str.strip()
-    clean_c = df["opt_c"].fillna("").astype(str).str.strip()
-    clean_d = df["opt_d"].fillna("").astype(str).str.strip()
+        print(f"[*] Processing {len(questions)} meteorological questions & explanations...")
+        for item in questions:
+            ans_key = str(item.get("answer", "")).strip().lower()
+            options = item.get("options", {})
+            correct_text = options.get(ans_key, "")
+            chapter = item.get("chapter", "Aviation Meteorology")
+            question = item.get("question", "")
+            explanation = item.get("explanation", "")
 
-    semantic_strings = []
-    for q, a, b, c, d in zip(clean_q, clean_a, clean_b, clean_c, clean_d):
-        tokens = [q]
-        if a:
-            tokens.append(f"A: {a}")
-        if b:
-            tokens.append(f"B: {b}")
-        if c:
-            tokens.append(f"C: {c}")
-        if d:
-            tokens.append(f"D: {d}")
-        semantic_strings.append(" ".join(tokens).strip())
+            # Compose high-information density semantic context
+            semantic_doc = (
+                f"Chapter: {chapter}. "
+                f"Question: {question} "
+                f"Correct Answer ({ans_key}): {correct_text}. "
+                f"Explanation: {explanation}"
+            )
 
-    return semantic_strings
+            corpus_texts.append(semantic_doc)
+            self.documents.append({
+                "id": item.get("id"),
+                "chapter": chapter,
+                "question": question,
+                "options": options,
+                "answer_key": ans_key,
+                "answer_text": correct_text,
+                "explanation": explanation,
+                "semantic_context": semantic_doc
+            })
 
+        print(f"[*] Encoding {len(corpus_texts)} entries into dense vector space (L2-normalized)...")
+        self.embeddings = self.model.encode(
+            corpus_texts,
+            batch_size=64,
+            show_progress_bar=True,
+            normalize_embeddings=True,
+            convert_to_numpy=True
+        )
 
-def generate_and_save_embeddings(
-    csv_path: str = "dataset_semantic.csv",
-    model_name: str = "all-MiniLM-L6-v2",
-    output_embeddings: str = "embeddings.npy",
-    output_model: str = "embedder.pkl",
-    batch_size: int = 32,
-    device: Optional[str] = None,
-) -> Tuple[np.ndarray, SentenceTransformer]:
-    """
-    Load question dataset, encode semantic context into 384-dim vectors, and persist artifacts.
+        # Cache to disk for instant subsequent loads
+        np.save(emb_file, self.embeddings)
+        with open(meta_file, "w", encoding="utf-8") as f:
+            json.dump(self.documents, f, indent=2)
 
-    Args:
-        csv_path: Path to dataset_semantic.csv.
-        model_name: SentenceTransformer pretrained model tag.
-        output_embeddings: Filename for output numpy array.
-        output_model: Filename for serialized SentenceTransformer.
-        batch_size: Batch size for GPU/CPU vectorized inference.
-        device: 'cpu' or 'cuda'. Defaults to auto-selection with CPU fallback.
+        print(f"[+] Semantic Index created & cached! Shape: {self.embeddings.shape}")
 
-    Returns:
-        Tuple of (embeddings_array, model_instance).
-    """
-    resolved_csv = resolve_file_path(csv_path)
-    logger.info(f"🔍 Loading dataset from: {resolved_csv}")
-    if not resolved_csv.exists():
-        raise FileNotFoundError(f"❌ Dataset file not found at: {resolved_csv}")
+    def search_semantic(self, query: str, top_k: int = 10, threshold: float = 0.25) -> List[Dict[str, Any]]:
+        """
+        Retrieves top_k closest items in latent semantic space via Cosine Similarity.
+        """
+        if self.embeddings is None:
+            raise ValueError("Index not loaded. Run build_index first.")
 
-    df = pd.read_csv(resolved_csv)
-    logger.info(f"📊 Loaded {len(df)} questions from {resolved_csv.name}")
+        # Encode query to normalized 384-d vector
+        query_vec = self.model.encode([query], normalize_embeddings=True, convert_to_numpy=True)[0]
+        
+        # Dot product of normalized vectors = Cosine Similarity
+        cosine_sims = np.dot(self.embeddings, query_vec)
+        
+        # Sort descending
+        top_indices = np.argsort(cosine_sims)[::-1][:top_k]
+        
+        results = []
+        for idx in top_indices:
+            score = float(cosine_sims[idx])
+            if score >= threshold:
+                doc = dict(self.documents[idx])
+                doc["cosine_similarity"] = round(score, 4)
+                results.append(doc)
 
-    # Build semantic text representation
-    texts = build_semantic_text(df)
-
-    # Automatically select CPU or CUDA safely
-    if device is None:
-        try:
-            import torch
-            device = "cuda" if torch.cuda.is_available() else "cpu"
-        except ImportError:
-            device = "cpu"
-
-    logger.info(f"🚀 Initializing SentenceTransformer('{model_name}') on device='{device}'...")
-    model = SentenceTransformer(model_name, device=device)
-
-    logger.info(f"🧠 Encoding {len(texts)} questions (batch_size={batch_size}, normalize=True)...")
-    embeddings = model.encode(
-        texts,
-        batch_size=batch_size,
-        show_progress_bar=True,
-        normalize_embeddings=True,
-        convert_to_numpy=True,
-    )
-
-    # Verify array structure
-    embeddings = np.ascontiguousarray(embeddings, dtype=np.float32)
-    shape = embeddings.shape
-    logger.info(f"✅ Embeddings generated with shape: {shape}")
-
-    # Save embeddings to disk
-    out_emb_path = Path(output_embeddings).resolve()
-    np.save(out_emb_path, embeddings)
-    logger.info(f"💾 Saved embeddings array to: {out_emb_path}")
-
-    # Also mirror to ml/ directory if it exists for backwards-compatibility
-    ml_emb = Path(__file__).resolve().parent / "ml" / "embeddings.npy"
-    if ml_emb.parent.exists() and ml_emb != out_emb_path:
-        np.save(ml_emb, embeddings)
-
-    # Save embedder model instance via joblib
-    out_model_path = Path(output_model).resolve()
-    joblib.dump(model, out_model_path)
-    logger.info(f"💾 Saved embedder model instance to: {out_model_path}")
-
-    ml_model = Path(__file__).resolve().parent / "ml" / "embedder.pkl"
-    if ml_model.parent.exists() and ml_model != out_model_path:
-        joblib.dump(model, ml_model)
-
-    return embeddings, model
-
-
-def display_embedding_inspection(
-    df: pd.DataFrame, embeddings: np.ndarray, num_samples: int = 3
-) -> None:
-    """
-    Print proof of semantic vectorization: shape, vector slice, and sample embeddings.
-
-    Args:
-        df: DataFrame of questions.
-        embeddings: NumPy embeddings matrix.
-        num_samples: Number of sample questions to inspect.
-    """
-    print("\n" + "═" * 70)
-    print("📊 SEMANTIC EMBEDDING VERIFICATION REPORT")
-    print("═" * 70)
-    print(f"✅ Final Embedding Matrix Shape : {embeddings.shape} (N_questions × Dims)")
-    print(f"✅ Data Type                    : {embeddings.dtype}")
-    print(f"✅ L2-Norm of Row 0             : {np.linalg.norm(embeddings[0]):.4f} (Normalized Unit Vector)")
-    print("\n📐 First 20 Dimensions of Question #1 Vector:")
-    print("   " + ", ".join(f"{val:+.4f}" for val in embeddings[0][:20]))
-    print("\n" + "─" * 70)
-    print("🔍 Sample Questions & First 5 Embedding Dimensions:")
-    print("─" * 70)
-
-    for i in range(min(num_samples, len(df))):
-        q_text = df.iloc[i].get("question", "N/A")
-        topic = df.iloc[i].get("topic", "N/A")
-        diff = df.iloc[i].get("difficulty", "N/A")
-        first_5 = [f"{v:+.4f}" for v in embeddings[i][:5]]
-        print(f" [{i+1}] Topic: {topic} | Difficulty: {diff}")
-        print(f"     Q: \"{q_text[:75]}...\"")
-        print(f"     Vector[:5] -> [{', '.join(first_5)}]")
-        print()
-    print("═" * 70 + "\n")
-
+        return results
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate 384-dim semantic embeddings for DGCA questions.")
-    parser.add_argument("--csv", default="dataset_semantic.csv", help="Input CSV path")
-    parser.add_argument("--model", default="all-MiniLM-L6-v2", help="Pretrained model identifier")
-    parser.add_argument("--batch-size", type=int, default=32, help="Encoding batch size")
-    parser.add_argument("--output-emb", default="embeddings.npy", help="Output .npy filepath")
-    parser.add_argument("--output-model", default="embedder.pkl", help="Output model pickle filepath")
-    args = parser.parse_args()
-
-    emb, mdl = generate_and_save_embeddings(
-        csv_path=args.csv,
-        model_name=args.model,
-        output_embeddings=args.output_emb,
-        output_model=args.output_model,
-        batch_size=args.batch_size,
-    )
-
-    resolved_csv = resolve_file_path(args.csv)
-    dataset_df = pd.read_csv(resolved_csv)
-    display_embedding_inspection(dataset_df, emb, num_samples=3)
+    embedder = SemanticEmbedder()
+    embedder.build_index("Meteorology formate ml model train.json")
+    
+    # Test sample search
+    sample_query = "What happens to the tropopause boundary over the equator during summer?"
+    hits = embedder.search_semantic(sample_query, top_k=3)
+    print(f"\nQuery: {sample_query}")
+    for i, hit in enumerate(hits, 1):
+        print(f"\n[{i}] Cosine Score: {hit['cosine_similarity']}")
+        print(f"    Chapter: {hit['chapter']}")
+        print(f"    Question: {hit['question']}")
+        print(f"    Answer: ({hit['answer_key']}) {hit['answer_text']}")
+        print(f"    Explanation: {hit['explanation']}")

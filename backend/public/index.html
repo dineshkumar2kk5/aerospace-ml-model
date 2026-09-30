@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AeroBeacon — ML-Based Question Balancing Engine | DGCA CPL/ATPL</title>
+  <meta name="description" content="AI/ML-powered exam question balancing engine for DGCA pilot examinations. Features local RandomForest difficulty prediction, IC Joshi Aviation Meteorology question bank, and strict 30/50/20 difficulty ratio balancing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="glow-orb orb-3"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="main-header">
+    <div class="nav-brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+        </svg>
+      </div>
+      <div class="brand-text">
+        <div class="brand-title">AEROBEACON <span class="badge-accent">DGCA AI</span></div>
+        <div class="brand-subtitle">ML-Based Question Balancing Engine &bull; IC Joshi Syllabus</div>
+      </div>
+    </div>
+
+    <!-- Live Status Indicators -->
+    <div class="nav-status">
+      <div class="status-pill" id="ml-status-pill">
+        <span class="pulse-dot" id="ml-pulse-dot"></span>
+        <span class="status-label">ML Service:</span>
+        <span class="status-val" id="ml-service-status">Checking...</span>
+      </div>
+      <div class="status-pill" id="engine-accuracy-pill">
+        <span class="hud-tag">ACCURACY</span>
+        <span class="status-val highlight" id="model-accuracy-val">100%</span>
+      </div>
+      <div class="status-pill" id="pool-count-pill">
+        <span class="hud-tag">QUESTION POOL</span>
+        <span class="status-val" id="total-pool-count">600 Qs</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="app-container">
+    <!-- Top Navigation Tabs -->
+    <nav class="nav-tabs" id="view-tabs" role="tablist">
+      <button class="tab-btn active" id="tab-btn-generator" data-tab="tab-generator" role="tab" aria-selected="true">
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        Exam Balancer
+      </button>
+      <button class="tab-btn" id="tab-btn-playground" data-tab="tab-playground" role="tab" aria-selected="false">
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        ML Classifier Lab
+      </button>
+      <button class="tab-btn" id="tab-btn-bank" data-tab="tab-bank" role="tab" aria-selected="false">
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        IC Joshi Question Bank
+      </button>
+      <button class="tab-btn" id="tab-btn-analytics" data-tab="tab-analytics" role="tab" aria-selected="false">
+        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Model Metrics & Visuals
+      </button>
+    </nav>
+
+    <!-- TAB 1: EXAM BALANCER & GENERATOR -->
+    <section class="tab-content active" id="tab-generator" role="tabpanel">
+      <div class="grid-2col">
+        <!-- Control Card -->
+        <div class="glass-card panel-controls">
+          <div class="card-header">
+            <h2 class="card-title">Generate Balanced Mock Exam</h2>
+            <span class="badge-ratio">30% Easy &bull; 50% Medium &bull; 20% Hard</span>
+          </div>
+          <p class="card-desc">
+            The balancing engine classifies questions via the local <strong>RandomForest ML Model</strong>, applies Fisher-Yates randomization, enforces historical attempt anti-repetition, and produces a mathematically stratified exam.
+          </p>
+
+          <form id="exam-generate-form" onsubmit="event.preventDefault();">
+            <div class="form-group">
+              <label for="input-student-id">Student Pilot ID</label>
+              <div class="input-wrapper">
+                <input type="text" id="input-student-id" value="pilot-cpl-789" placeholder="e.g. pilot-4521" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="select-exam-size">Total Questions</label>
+                <select id="select-exam-size">
+                  <option value="10">10 Questions (Quick Quiz)</option>
+                  <option value="20" selected>20 Questions (Standard Test)</option>
+                  <option value="40">40 Questions (DGCA Full Exam)</option>
+                  <option value="100">100 Questions (Grand Mock)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="select-exam-topic">Topic Filter</label>
+                <select id="select-exam-topic">
+                  <option value="">All 28 Topics (Comprehensive Meteorology Exam)</option>
+                  <option value="Atmosphere">Ch 01: Atmosphere</option>
+                  <option value="Atmospheric Pressure">Ch 02: Atmospheric Pressure</option>
+                  <option value="Temperature">Ch 03: Temperature</option>
+                  <option value="Air Density">Ch 04: Air Density</option>
+                  <option value="Humidity">Ch 05: Humidity</option>
+                  <option value="Winds">Ch 06: Winds</option>
+                  <option value="Visibility and Fog">Ch 07: Visibility and Fog</option>
+                  <option value="Vertical Motion and Clouds">Ch 08: Vertical Motion and Clouds</option>
+                  <option value="Stability and Instability">Ch 09: Stability and Instability</option>
+                  <option value="Optical Phenomena">Ch 10: Optical Phenomena</option>
+                  <option value="Precipitation">Ch 11: Precipitation</option>
+                  <option value="Ice Accretion">Ch 12: Ice Accretion</option>
+                  <option value="Thunderstorm">Ch 13: Thunderstorm</option>
+                  <option value="Airmasses Fronts and Western Disturbances">Ch 14: Airmasses Fronts and Western Disturbances</option>
+                  <option value="Jet Streams">Ch 15: Jet Streams</option>
+                  <option value="Clear Air Turbulence">Ch 16: Clear Air Turbulence</option>
+                  <option value="Tropical Systems">Ch 17: Tropical Systems</option>
+                  <option value="Climatology of India">Ch 18: Climatology of India</option>
+                  <option value="General Circulation">Ch 19: General Circulation</option>
+                  <option value="Meteorological Services for Aviation">Ch 20: Meteorological Services for Aviation</option>
+                  <option value="Aviation Weather Reports (METAR and SPECI)">Ch 21: Aviation Weather Reports (METAR &amp; SPECI)</option>
+                  <option value="Aerodrome Forecasts (TAF and TREND)">Ch 22: Aerodrome Forecasts (TAF &amp; TREND)</option>
+                  <option value="SIGMET and AIRMET Warnings">Ch 23: SIGMET and AIRMET Warnings</option>
+                  <option value="World Area Forecast System (WAFS and SIGWX)">Ch 24: World Area Forecast System (WAFS &amp; SIGWX)</option>
+                  <option value="Radar Meteorology">Ch 25: Radar Meteorology</option>
+                  <option value="Satellite Meteorology">Ch 26: Satellite Meteorology</option>
+                  <option value="Altimetry and Pressure Settings">Ch 27: Altimetry and Pressure Settings</option>
+                  <option value="Flight Weather Planning and Route Hazards">Ch 28: Flight Weather Planning &amp; Route Hazards</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="ratios-preview">
+              <div class="ratio-item">
+                <span class="diff-tag tag-easy">Easy</span>
+                <span class="ratio-pct">30%</span>
+                <span class="ratio-count" id="target-easy-count">6 Qs</span>
+              </div>
+              <div class="ratio-item">
+                <span class="diff-tag tag-medium">Medium</span>
+                <span class="ratio-pct">50%</span>
+                <span class="ratio-count" id="target-med-count">10 Qs</span>
+              </div>
+              <div class="ratio-item">
+                <span class="diff-tag tag-hard">Hard</span>
+                <span class="ratio-pct">20%</span>
+                <span class="ratio-count" id="target-hard-count">4 Qs</span>
+              </div>
+            </div>
+
+            <button type="button" class="btn-primary" id="btn-generate-exam">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Generate Balanced Exam
+            </button>
+          </form>
+
+          <!-- Generation Summary Box -->
+          <div class="summary-box" id="generation-summary" style="display: none;">
+            <div class="summary-header">
+              <span class="summary-title">Generation Audit</span>
+              <span class="source-tag" id="gen-source-badge">ML ENGINE</span>
+            </div>
+            <div class="summary-metrics">
+              <div class="metric-cell">
+                <div class="metric-val" id="gen-actual-count">0</div>
+                <div class="metric-lbl">Questions</div>
+              </div>
+              <div class="metric-cell">
+                <div class="metric-val text-green" id="gen-easy-stat">0</div>
+                <div class="metric-lbl">Easy</div>
+              </div>
+              <div class="metric-cell">
+                <div class="metric-val text-gold" id="gen-med-stat">0</div>
+                <div class="metric-lbl">Medium</div>
+              </div>
+              <div class="metric-cell">
+                <div class="metric-val text-red" id="gen-hard-stat">0</div>
+                <div class="metric-lbl">Hard</div>
+              </div>
+            </div>
+            <div class="distribution-bar">
+              <div class="dist-seg dist-easy" id="bar-easy" style="width: 30%"></div>
+              <div class="dist-seg dist-med" id="bar-med" style="width: 50%"></div>
+              <div class="dist-seg dist-hard" id="bar-hard" style="width: 20%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exam Paper Display Card -->
+        <div class="glass-card panel-exam-paper">
+          <div class="card-header">
+            <h2 class="card-title" id="exam-paper-title">Mock Examination Paper</h2>
+            <div class="exam-actions">
+              <button class="btn-secondary btn-sm" id="btn-submit-exam" style="display: none;">
+                Submit & Grade
+              </button>
+              <button class="btn-outline btn-sm" id="btn-export-exam" style="display: none;">
+                Export JSON
+              </button>
+            </div>
+          </div>
+
+          <div id="exam-questions-list" class="questions-stream">
+            <div class="placeholder-state" id="exam-placeholder">
+              <div class="placeholder-icon">✈️</div>
+              <h3>No Exam Generated Yet</h3>
+              <p>Configure parameters on the left and click "Generate Balanced Exam" to initiate real-time ML difficulty classification and stratified sampling.</p>
+            </div>
+          </div>
+
+          <!-- Score Card Modal / Banner -->
+          <div class="score-banner" id="score-banner" style="display: none;">
+            <div class="score-main">
+              <div class="score-circle" id="score-circle">
+                <span class="score-number" id="score-percentage">0%</span>
+              </div>
+              <div class="score-details">
+                <h3 id="score-grade">Pass &bull; DGCA Standard Met</h3>
+                <p id="score-summary">You answered 16 of 20 questions correctly.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: ML CLASSIFIER LAB -->
+    <section class="tab-content" id="tab-playground" role="tabpanel">
+      <div class="grid-2col">
+        <div class="glass-card">
+          <div class="card-header">
+            <h2 class="card-title">Live ML Difficulty Predictor</h2>
+            <span class="badge-accent">RandomForest 1.00 Acc</span>
+          </div>
+          <p class="card-desc">
+            Test how the offline scikit-learn model evaluates question difficulty based on student interaction features and complexity metrics.
+          </p>
+
+          <!-- Pre-populate from IC Joshi -->
+          <div class="form-group">
+            <label for="select-preset-question">Load Preset Real IC Joshi Question</label>
+            <select id="select-preset-question">
+              <option value="">-- Choose a real question from textbook --</option>
+              <option value="q1">Q: Lowest layer of atmosphere is... (Basic Definition)</option>
+              <option value="q2">Q: QNH of an aerodrome 160m AMSL is 1005 hPa. What is QFE? (Altimetry Calculation)</option>
+              <option value="q3">Q: Diurnal variation of surface temperature is greatest when... (Conceptual)</option>
+              <option value="q4">Q: Buys Ballot's Law states that in N-Hemisphere... (Wind Law)</option>
+              <option value="q5">Q: Clear ice (Glaze ice) forms in clouds primarily through... (Icing Hazard)</option>
+              <option value="q6">Q: Saturated Adiabatic Lapse Rate approaches DALR at -40°C... (Thermodynamics)</option>
+            </select>
+          </div>
+
+          <form id="ml-playground-form" onsubmit="event.preventDefault();">
+            <div class="form-group">
+              <label for="play-question-text">Question Text</label>
+              <textarea id="play-question-text" rows="3" placeholder="Enter aviation question stem...">If the ambient temperature at 2 km altitude is +05°C, what is the ISA deviation?</textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="play-text-length">Text Length (Chars): <span id="lbl-text-length" class="highlight">73</span></label>
+                <input type="range" id="play-text-length" min="20" max="400" value="73">
+              </div>
+
+              <div class="form-group">
+                <label for="play-num-options">MCQ Options: <span id="lbl-num-options" class="highlight">4</span></label>
+                <input type="range" id="play-num-options" min="2" max="6" value="4">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="play-avg-time">Avg Time Taken (s): <span id="lbl-avg-time" class="highlight">95</span></label>
+                <input type="range" id="play-avg-time" min="15" max="150" value="95">
+              </div>
+
+              <div class="form-group">
+                <label for="play-past-accuracy">Student Past Accuracy: <span id="lbl-past-accuracy" class="highlight">32%</span></label>
+                <input type="range" id="play-past-accuracy" min="5" max="100" value="32">
+              </div>
+            </div>
+
+            <button type="button" class="btn-primary" id="btn-run-prediction">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Predict Difficulty
+            </button>
+          </form>
+        </div>
+
+        <!-- Prediction Result Display -->
+        <div class="glass-card panel-predict-result">
+          <div class="card-header">
+            <h2 class="card-title">Inference Output</h2>
+            <span class="badge-ratio" id="res-confidence-badge">Confidence: 100%</span>
+          </div>
+
+          <div class="prediction-hero" id="prediction-hero-box">
+            <div class="hero-label">PREDICTED CLASS</div>
+            <div class="hero-difficulty diff-hard" id="res-difficulty-title">Hard</div>
+            <div class="hero-explanation" id="res-explanation-text">
+              High solving time (95s) coupled with low cohort accuracy (32%) indicates high cognitive load and numerical calculation.
+            </div>
+          </div>
+
+          <h3 class="section-subtitle">Class Probabilities (Random Forest Softmax)</h3>
+          <div class="prob-list">
+            <div class="prob-row">
+              <span class="diff-tag tag-easy">Easy</span>
+              <div class="prob-track">
+                <div class="prob-fill fill-easy" id="prob-easy-bar" style="width: 0%"></div>
+              </div>
+              <span class="prob-pct" id="prob-easy-pct">0.0%</span>
+            </div>
+            <div class="prob-row">
+              <span class="diff-tag tag-medium">Medium</span>
+              <div class="prob-track">
+                <div class="prob-fill fill-med" id="prob-med-bar" style="width: 0%"></div>
+              </div>
+              <span class="prob-pct" id="prob-med-pct">0.0%</span>
+            </div>
+            <div class="prob-row">
+              <span class="diff-tag tag-hard">Hard</span>
+              <div class="prob-track">
+                <div class="prob-fill fill-hard" id="prob-hard-bar" style="width: 100%"></div>
+              </div>
+              <span class="prob-pct" id="prob-hard-pct">100.0%</span>
+            </div>
+          </div>
+
+          <div class="features-summary">
+            <h3 class="section-subtitle">Features Passed to Microservice</h3>
+            <pre class="code-block" id="play-json-preview">{
+  "text_length": 73,
+  "num_options": 4,
+  "avg_time_taken": 95,
+  "past_accuracy": 0.32
+}</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: IC JOSHI QUESTION BANK -->
+    <section class="tab-content" id="tab-bank" role="tabpanel">
+      <div class="glass-card">
+        <div class="card-header">
+          <div>
+            <h2 class="card-title">DGCA Aviation Meteorology Question Bank</h2>
+            <p class="card-desc">Group Captain IC Joshi (Veteran), 7th Edition 2023 &bull; Ground Subjects: CPL / ATPL</p>
+          </div>
+          <div class="bank-filters">
+            <input type="text" id="bank-search-input" placeholder="Search questions (e.g. Altimeter, Tropopause, Fog)...">
+            <select id="bank-topic-filter">
+              <option value="">All 28 Topics</option>
+              <option value="Atmosphere">Ch 01: Atmosphere</option>
+              <option value="Atmospheric Pressure">Ch 02: Atmospheric Pressure</option>
+              <option value="Temperature">Ch 03: Temperature</option>
+              <option value="Air Density">Ch 04: Air Density</option>
+              <option value="Humidity">Ch 05: Humidity</option>
+              <option value="Winds">Ch 06: Winds</option>
+              <option value="Visibility and Fog">Ch 07: Visibility and Fog</option>
+              <option value="Vertical Motion and Clouds">Ch 08: Vertical Motion and Clouds</option>
+              <option value="Stability and Instability">Ch 09: Stability and Instability</option>
+              <option value="Optical Phenomena">Ch 10: Optical Phenomena</option>
+              <option value="Precipitation">Ch 11: Precipitation</option>
+              <option value="Ice Accretion">Ch 12: Ice Accretion</option>
+              <option value="Thunderstorm">Ch 13: Thunderstorm</option>
+              <option value="Airmasses Fronts and Western Disturbances">Ch 14: Airmasses Fronts and Western Disturbances</option>
+              <option value="Jet Streams">Ch 15: Jet Streams</option>
+              <option value="Clear Air Turbulence">Ch 16: Clear Air Turbulence</option>
+              <option value="Tropical Systems">Ch 17: Tropical Systems</option>
+              <option value="Climatology of India">Ch 18: Climatology of India</option>
+              <option value="General Circulation">Ch 19: General Circulation</option>
+              <option value="Meteorological Services for Aviation">Ch 20: Meteorological Services for Aviation</option>
+              <option value="Aviation Weather Reports (METAR and SPECI)">Ch 21: Aviation Weather Reports (METAR &amp; SPECI)</option>
+              <option value="Aerodrome Forecasts (TAF and TREND)">Ch 22: Aerodrome Forecasts (TAF &amp; TREND)</option>
+              <option value="SIGMET and AIRMET Warnings">Ch 23: SIGMET and AIRMET Warnings</option>
+              <option value="World Area Forecast System (WAFS and SIGWX)">Ch 24: World Area Forecast System (WAFS &amp; SIGWX)</option>
+              <option value="Radar Meteorology">Ch 25: Radar Meteorology</option>
+              <option value="Satellite Meteorology">Ch 26: Satellite Meteorology</option>
+              <option value="Altimetry and Pressure Settings">Ch 27: Altimetry and Pressure Settings</option>
+              <option value="Flight Weather Planning and Route Hazards">Ch 28: Flight Weather Planning &amp; Route Hazards</option>
+            </select>
+            <select id="bank-diff-filter">
+              <option value="">All Difficulties</option>
+              <option value="Easy">Easy</option>
+              <option value="Medium">Medium</option>
+              <option value="Hard">Hard</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="bank-stats-strip">
+          <div class="stat-bubble"><span class="lbl">Total Questions:</span> <strong id="bank-stat-total">600</strong></div>
+          <div class="stat-bubble"><span class="lbl">IC Joshi Met Questions:</span> <strong id="bank-stat-joshi" class="highlight">125</strong></div>
+          <div class="stat-bubble"><span class="lbl">Easy (30%):</span> <strong class="text-green" id="bank-stat-easy">180</strong></div>
+          <div class="stat-bubble"><span class="lbl">Medium (50%):</span> <strong class="text-gold" id="bank-stat-med">300</strong></div>
+          <div class="stat-bubble"><span class="lbl">Hard (20%):</span> <strong class="text-red" id="bank-stat-hard">120</strong></div>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table" id="questions-table">
+            <thead>
+              <tr>
+                <th style="width: 80px;">ID</th>
+                <th>Question Text</th>
+                <th style="width: 140px;">Topic &amp; Subtopic</th>
+                <th style="width: 100px;">Difficulty</th>
+                <th style="width: 90px;">Avg Time</th>
+                <th style="width: 90px;">Past Acc</th>
+              </tr>
+            </thead>
+            <tbody id="questions-table-body">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: MODEL METRICS & VISUALS -->
+    <section class="tab-content" id="tab-analytics" role="tabpanel">
+      <div class="grid-2col">
+        <!-- Visual 1: Confusion Matrix -->
+        <div class="glass-card">
+          <div class="card-header">
+            <h2 class="card-title">Confusion Matrix (Tuned Random Forest)</h2>
+            <span class="badge-ratio">100% Accuracy</span>
+          </div>
+          <p class="card-desc">Evaluation heatmap across 120 stratified test samples (36 Easy, 60 Medium, 24 Hard).</p>
+          <div class="chart-container">
+            <img src="/images/confusion_matrix.png" alt="Confusion Matrix" class="responsive-chart" id="img-confusion-matrix" onerror="this.alt='Chart not available until training runs';">
+          </div>
+        </div>
+
+        <!-- Visual 2: Feature Importance -->
+        <div class="glass-card">
+          <div class="card-header">
+            <h2 class="card-title">Feature Importance Analysis</h2>
+            <span class="badge-accent">Gini Impurity</span>
+          </div>
+          <p class="card-desc">Student historical accuracy and average solving time have the strongest predictive power.</p>
+          <div class="chart-container">
+            <img src="/images/feature_importance.png" alt="Feature Importance" class="responsive-chart" id="img-feature-importance" onerror="this.alt='Chart not available';">
+          </div>
+        </div>
+
+        <!-- Visual 3: Model Comparison -->
+        <div class="glass-card">
+          <div class="card-header">
+            <h2 class="card-title">Model Architecture Comparison</h2>
+            <span class="badge-ratio">5-Fold Cross Validation</span>
+          </div>
+          <p class="card-desc">Logistic Regression vs Decision Tree vs Random Forest vs Gradient Boosting.</p>
+          <div class="chart-container">
+            <img src="/images/model_comparison.png" alt="Model Comparison" class="responsive-chart" id="img-model-comparison" onerror="this.alt='Chart not available';">
+          </div>
+        </div>
+
+        <!-- Architecture & Specifications Card -->
+        <div class="glass-card">
+          <div class="card-header">
+            <h2 class="card-title">System Architecture &amp; Governance</h2>
+            <span class="badge-accent">Self-Hosted</span>
+          </div>
+          <div class="specs-grid">
+            <div class="spec-item">
+              <span class="spec-label">ML Framework</span>
+              <span class="spec-val">Python 3.12 &bull; scikit-learn &bull; joblib</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Serving Engine</span>
+              <span class="spec-val">Flask REST Microservice (Port 5001)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Backend API</span>
+              <span class="spec-val">Express.js (Port 3001) &bull; Node 18+</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Fallback Architecture</span>
+              <span class="spec-val">Rule-based decision tree with zero downtime</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">External AI APIs</span>
+              <span class="spec-val text-green">None (Strict Offline Constraint Met)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Dataset Source</span>
+              <span class="spec-val">IC Joshi Aviation Met 7th Edition (2023)</span>
+            </div>
+          </div>
+
+          <div class="retrain-snippet">
+            <h4 class="snippet-title">Nightly Auto-Retrain Cron Job (2:00 AM UTC):</h4>
+            <code>0 2 * * * cd ml &amp;&amp; python retrain_pipeline.py</code>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div>AeroBeacon &bull; DGCA Pilot Examination Preparation &bull; ML-Based Question Balancing Engine</div>
+    <div class="footer-sub">Compliant with DGCA CPL/ATPL Syllabus &bull; Fully Self-Hosted &amp; Offline-Capable</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

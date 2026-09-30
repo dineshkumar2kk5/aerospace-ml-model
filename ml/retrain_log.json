@@ -1,0 +1,20 @@
+[
+  {
+    "started_at": "2026-09-30T10:10:14.252393+00:00",
+    "status": "dry_run",
+    "old_accuracy": null,
+    "new_accuracy": null,
+    "action": "none",
+    "error": null
+  },
+  {
+    "started_at": "2026-09-30T10:10:14.252393+00:00",
+    "status": "dry_run",
+    "old_accuracy": null,
+    "new_accuracy": null,
+    "action": "none",
+    "error": null,
+    "finished_at": "2026-09-30T10:10:15.244077+00:00",
+    "duration_seconds": 1.0
+  }
+]

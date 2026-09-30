@@ -1,0 +1,27 @@
+{
+  "name": "aerobeacon-backend",
+  "version": "1.0.0",
+  "description": "AeroBeacon DGCA exam preparation — Node.js backend with ML-based question balancing",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "jest --verbose --detectOpenHandles --forceExit",
+    "test:watch": "jest --watch --verbose",
+    "test:coverage": "jest --coverage --verbose --forceExit"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.0",
+    "express": "^4.18.0",
+    "mongoose": "^8.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": ["**/__tests__/**/*.test.js"],
+    "collectCoverageFrom": ["src/**/*.js", "!src/server.js"]
+  }
+}

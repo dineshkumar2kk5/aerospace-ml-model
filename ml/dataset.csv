@@ -1,0 +1,807 @@
+question_id,topic,subtopic,text_length,num_options,avg_time_taken,past_accuracy,difficulty
+joshi-431,Tropical Systems,Tropical Systems,20,3,29,0.92,Easy
+joshi-520,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),133,3,60,0.58,Medium
+joshi-408,Tropical Systems,Tropical Systems,28,3,27,0.94,Easy
+joshi-377,Jet Streams,Jet Streams,55,3,55,0.66,Medium
+joshi-103,Temperature,Temperature,107,3,45,0.65,Medium
+joshi-aug-828,Humidity,Humidity,61,3,25,0.88,Easy
+joshi-aug-859,Ice Accretion,Ice Accretion,147,3,57,0.6,Medium
+joshi-aug-967,Satellite Meteorology,Satellite Meteorology,106,3,40,0.88,Easy
+joshi-509,Meteorological Services for Aviation,Meteorological Services for Aviation,8,3,62,0.55,Medium
+joshi-411,Tropical Systems,Tropical Systems,44,3,45,0.7,Medium
+joshi-362,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,40,3,108,0.44,Hard
+joshi-aug-932,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,92,3,25,0.85,Easy
+joshi-aug-956,Radar Meteorology,Radar Meteorology,57,3,96,0.33,Hard
+joshi-aug-870,Clear Air Turbulence,Clear Air Turbulence,87,4,58,0.69,Medium
+joshi-018,Atmosphere,Atmosphere,61,3,36,0.95,Easy
+joshi-442,Tropical Systems,Tropical Systems,56,3,109,0.5,Hard
+joshi-aug-879,General Circulation,General Circulation,80,3,113,0.43,Hard
+joshi-468,Climatology of India,Climatology of India,82,4,53,0.54,Medium
+joshi-547,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),114,3,32,0.89,Easy
+joshi-365,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,20,3,49,0.55,Medium
+joshi-403,Clear Air Turbulence,Clear Air Turbulence,41,4,67,0.61,Medium
+joshi-307,Thunderstorm,Thunderstorm,63,3,47,0.66,Medium
+joshi-313,Thunderstorm,Thunderstorm,58,3,27,0.9,Easy
+joshi-496,Meteorological Services for Aviation,Meteorological Services for Aviation,48,3,65,0.7,Medium
+joshi-453,Climatology of India,Climatology of India,25,3,71,0.61,Medium
+joshi-571,Satellite Meteorology,Satellite Meteorology,123,3,42,0.78,Easy
+joshi-124,Temperature,Temperature,73,3,73,0.61,Medium
+joshi-aug-945,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),92,3,32,0.94,Easy
+joshi-577,Altimetry and Pressure Settings,Altimetry and Pressure Settings,76,3,30,0.92,Easy
+joshi-102,Temperature,Temperature,74,3,71,0.54,Medium
+joshi-590,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,144,3,45,0.89,Easy
+joshi-aug-931,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,127,3,90,0.35,Hard
+joshi-567,Satellite Meteorology,Satellite Meteorology,88,3,32,0.91,Easy
+joshi-581,Altimetry and Pressure Settings,Altimetry and Pressure Settings,104,3,45,0.92,Easy
+joshi-169,Winds,Winds,53,3,66,0.71,Medium
+joshi-382,Jet Streams,Jet Streams,51,3,67,0.56,Medium
+joshi-204,Visibility and Fog,Visibility and Fog,19,3,45,0.6,Medium
+joshi-255,Optical Phenomena,Optical Phenomena,32,3,26,0.88,Easy
+joshi-340,Thunderstorm,Thunderstorm,74,3,28,0.85,Easy
+joshi-127,Air Density,Air Density,79,3,90,0.41,Hard
+joshi-aug-868,Clear Air Turbulence,Clear Air Turbulence,80,3,52,0.71,Medium
+joshi-134,Air Density,Air Density,87,3,66,0.67,Medium
+joshi-aug-1002,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,100,3,66,0.65,Medium
+joshi-283,Precipitation,Precipitation,72,3,62,0.59,Medium
+joshi-004,Atmosphere,Atmosphere,62,3,101,0.31,Hard
+joshi-404,Clear Air Turbulence,Clear Air Turbulence,133,3,29,0.85,Easy
+joshi-552,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),101,3,80,0.42,Hard
+joshi-515,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),69,3,32,0.88,Easy
+joshi-041,Atmosphere,Atmosphere,49,3,26,0.92,Easy
+joshi-535,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),56,3,30,0.88,Easy
+joshi-488,General Circulation,General Circulation,80,3,92,0.25,Hard
+joshi-559,Radar Meteorology,Radar Meteorology,82,3,44,0.83,Easy
+joshi-511,Meteorological Services for Aviation,Meteorological Services for Aviation,40,3,53,0.67,Medium
+joshi-aug-898,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),81,3,72,0.57,Medium
+joshi-008,Atmosphere,Atmosphere,27,3,50,0.55,Medium
+joshi-221,Vertical Motion and Clouds,Vertical Motion and Clouds,32,3,39,0.81,Easy
+joshi-092,Temperature,Temperature,68,3,29,0.78,Easy
+joshi-aug-997,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,100,3,75,0.56,Medium
+joshi-280,Precipitation,Precipitation,50,3,63,0.69,Medium
+joshi-447,Climatology of India,Climatology of India,14,3,56,0.71,Medium
+joshi-015,Atmosphere,Atmosphere,71,3,46,0.65,Medium
+joshi-260,Optical Phenomena,Optical Phenomena,42,3,41,0.75,Easy
+joshi-450,Climatology of India,Climatology of India,20,3,119,0.5,Hard
+joshi-aug-968,Satellite Meteorology,Satellite Meteorology,123,3,74,0.61,Medium
+joshi-344,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,185,3,88,0.34,Hard
+joshi-112,Temperature,Temperature,13,3,124,0.36,Hard
+joshi-261,Optical Phenomena,Optical Phenomena,23,3,56,0.65,Medium
+joshi-108,Temperature,Temperature,28,3,52,0.68,Medium
+joshi-aug-961,Radar Meteorology,Radar Meteorology,89,3,28,0.92,Easy
+joshi-aug-977,Satellite Meteorology,Satellite Meteorology,88,3,32,0.83,Easy
+joshi-533,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),61,3,94,0.31,Hard
+joshi-541,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,66,3,44,0.83,Easy
+joshi-390,Jet Streams,Jet Streams,59,3,64,0.68,Medium
+joshi-139,Humidity,Humidity,110,3,64,0.7,Medium
+joshi-539,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,89,3,46,0.69,Medium
+joshi-519,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),36,3,38,0.85,Easy
+joshi-110,Temperature,Temperature,29,3,70,0.66,Medium
+joshi-375,Jet Streams,Jet Streams,76,3,37,0.89,Easy
+joshi-024,Atmosphere,Atmosphere,31,3,60,0.58,Medium
+joshi-589,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,129,3,31,0.92,Easy
+joshi-150,Winds,Winds,30,3,79,0.36,Hard
+joshi-380,Jet Streams,Jet Streams,32,3,37,0.88,Easy
+joshi-aug-832,Visibility and Fog,Visibility and Fog,33,3,48,0.67,Medium
+joshi-065,Atmospheric Pressure,Atmospheric Pressure,34,3,95,0.5,Hard
+joshi-508,Meteorological Services for Aviation,Meteorological Services for Aviation,63,3,72,0.68,Medium
+joshi-062,Atmospheric Pressure,Atmospheric Pressure,65,3,48,0.58,Medium
+joshi-538,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,99,3,35,0.83,Easy
+joshi-324,Thunderstorm,Thunderstorm,44,3,65,0.65,Medium
+joshi-458,Climatology of India,Climatology of India,22,3,28,0.89,Easy
+joshi-aug-915,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),46,3,62,0.62,Medium
+joshi-420,Tropical Systems,Tropical Systems,51,3,63,0.65,Medium
+joshi-445,Tropical Systems,Tropical Systems,23,3,118,0.37,Hard
+joshi-251,Optical Phenomena,Optical Phenomena,40,3,30,0.91,Easy
+joshi-aug-905,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),36,3,33,0.94,Easy
+joshi-aug-1007,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,100,3,29,0.85,Easy
+joshi-141,Humidity,Humidity,91,3,35,0.84,Easy
+joshi-aug-990,Altimetry and Pressure Settings,Altimetry and Pressure Settings,129,3,40,0.81,Easy
+joshi-aug-820,Humidity,Humidity,91,3,35,0.83,Easy
+joshi-388,Jet Streams,Jet Streams,46,3,49,0.7,Medium
+joshi-aug-809,Air Density,Air Density,21,3,33,0.93,Easy
+joshi-269,Precipitation,Precipitation,69,3,24,0.94,Easy
+joshi-580,Altimetry and Pressure Settings,Altimetry and Pressure Settings,137,3,42,0.75,Easy
+joshi-037,Atmosphere,Atmosphere,60,3,122,0.5,Hard
+joshi-257,Optical Phenomena,Optical Phenomena,44,3,39,0.8,Easy
+joshi-aug-856,Precipitation,Precipitation,68,3,40,0.75,Easy
+joshi-217,Vertical Motion and Clouds,Vertical Motion and Clouds,15,3,48,0.65,Medium
+joshi-aug-982,Altimetry and Pressure Settings,Altimetry and Pressure Settings,68,3,26,0.77,Easy
+joshi-163,Winds,Winds,40,3,34,0.8,Easy
+joshi-235,Stability and Instability,Stability and Instability,68,3,73,0.56,Medium
+joshi-168,Winds,Winds,53,3,112,0.22,Hard
+joshi-148,Winds,Winds,81,3,101,0.23,Hard
+joshi-482,General Circulation,General Circulation,71,3,56,0.56,Medium
+joshi-aug-894,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),64,3,95,0.41,Hard
+joshi-319,Thunderstorm,Thunderstorm,23,3,52,0.63,Medium
+joshi-aug-981,Satellite Meteorology,Satellite Meteorology,123,3,35,0.91,Easy
+joshi-aug-823,Humidity,Humidity,61,3,37,0.89,Easy
+joshi-332,Thunderstorm,Thunderstorm,38,3,52,0.65,Medium
+joshi-aug-805,Air Density,Air Density,70,3,42,0.9,Easy
+joshi-473,Climatology of India,Climatology of India,49,4,45,0.55,Medium
+joshi-293,Ice Accretion,Ice Accretion,40,3,52,0.66,Medium
+joshi-077,Atmospheric Pressure,Atmospheric Pressure,34,3,59,0.54,Medium
+joshi-aug-872,Clear Air Turbulence,Clear Air Turbulence,95,3,53,0.62,Medium
+joshi-aug-804,Air Density,Air Density,53,3,25,0.88,Easy
+joshi-429,Tropical Systems,Tropical Systems,37,3,97,0.44,Hard
+joshi-aug-888,General Circulation,General Circulation,35,3,58,0.68,Medium
+joshi-479,General Circulation,General Circulation,118,3,46,0.63,Medium
+joshi-291,Ice Accretion,Ice Accretion,114,3,74,0.61,Medium
+joshi-433,Tropical Systems,Tropical Systems,25,3,61,0.6,Medium
+joshi-345,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,70,3,50,0.69,Medium
+joshi-486,General Circulation,General Circulation,58,3,73,0.67,Medium
+joshi-545,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,33,3,42,0.77,Easy
+joshi-142,Humidity,Humidity,104,3,47,0.59,Medium
+joshi-524,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),38,3,42,0.76,Easy
+joshi-419,Tropical Systems,Tropical Systems,58,4,42,0.83,Easy
+joshi-144,Humidity,Humidity,95,3,61,0.62,Medium
+joshi-177,Winds,Winds,29,3,49,0.66,Medium
+joshi-414,Tropical Systems,Tropical Systems,49,3,55,0.59,Medium
+joshi-028,Atmosphere,Atmosphere,50,3,121,0.35,Hard
+joshi-317,Thunderstorm,Thunderstorm,56,3,60,0.63,Medium
+joshi-aug-839,Vertical Motion and Clouds,Vertical Motion and Clouds,56,3,60,0.58,Medium
+joshi-466,Climatology of India,Climatology of India,74,4,96,0.34,Hard
+joshi-aug-833,Visibility and Fog,Visibility and Fog,28,3,92,0.34,Hard
+joshi-383,Jet Streams,Jet Streams,26,3,93,0.25,Hard
+joshi-310,Thunderstorm,Thunderstorm,45,3,67,0.7,Medium
+joshi-aug-913,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),61,3,51,0.68,Medium
+joshi-010,Atmosphere,Atmosphere,24,3,53,0.61,Medium
+joshi-212,Vertical Motion and Clouds,Vertical Motion and Clouds,26,3,96,0.25,Hard
+joshi-111,Temperature,Temperature,45,3,62,0.66,Medium
+joshi-394,Jet Streams,Jet Streams,33,3,57,0.65,Medium
+joshi-aug-943,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),59,3,97,0.34,Hard
+joshi-446,Tropical Systems,Tropical Systems,43,3,70,0.68,Medium
+joshi-561,Radar Meteorology,Radar Meteorology,85,3,82,0.39,Hard
+joshi-aug-801,Air Density,Air Density,53,3,32,0.84,Easy
+joshi-aug-911,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),61,3,48,0.7,Medium
+joshi-214,Vertical Motion and Clouds,Vertical Motion and Clouds,48,3,37,0.87,Easy
+joshi-430,Tropical Systems,Tropical Systems,38,3,46,0.64,Medium
+joshi-498,Meteorological Services for Aviation,Meteorological Services for Aviation,38,3,47,0.59,Medium
+joshi-381,Jet Streams,Jet Streams,49,3,54,0.54,Medium
+joshi-234,Stability and Instability,Stability and Instability,10,3,71,0.57,Medium
+joshi-071,Atmospheric Pressure,Atmospheric Pressure,53,3,87,0.44,Hard
+joshi-176,Winds,Winds,47,3,70,0.63,Medium
+joshi-296,Ice Accretion,Ice Accretion,106,3,114,0.36,Hard
+joshi-059,Atmospheric Pressure,Atmospheric Pressure,14,3,50,0.7,Medium
+joshi-172,Winds,Winds,129,3,58,0.54,Medium
+joshi-237,Stability and Instability,Stability and Instability,54,3,112,0.39,Hard
+joshi-aug-887,General Circulation,General Circulation,118,3,53,0.58,Medium
+joshi-465,Climatology of India,Climatology of India,82,4,52,0.66,Medium
+joshi-aug-882,General Circulation,General Circulation,111,3,89,0.41,Hard
+joshi-aug-896,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),69,3,38,0.94,Easy
+joshi-175,Winds,Winds,78,3,106,0.29,Hard
+joshi-226,Vertical Motion and Clouds,Vertical Motion and Clouds,56,3,61,0.69,Medium
+joshi-aug-863,Ice Accretion,Ice Accretion,47,3,51,0.66,Medium
+joshi-517,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),81,3,48,0.68,Medium
+joshi-300,Ice Accretion,Ice Accretion,182,3,77,0.25,Hard
+joshi-174,Winds,Winds,88,3,46,0.66,Medium
+joshi-199,Visibility and Fog,Visibility and Fog,28,3,57,0.71,Medium
+joshi-053,Atmospheric Pressure,Atmospheric Pressure,52,3,34,0.83,Easy
+joshi-268,Precipitation,Precipitation,121,3,73,0.69,Medium
+joshi-225,Vertical Motion and Clouds,Vertical Motion and Clouds,120,3,47,0.59,Medium
+joshi-448,Climatology of India,Climatology of India,58,3,51,0.67,Medium
+joshi-338,Thunderstorm,Thunderstorm,26,3,74,0.6,Medium
+joshi-aug-987,Altimetry and Pressure Settings,Altimetry and Pressure Settings,104,3,34,0.81,Easy
+joshi-aug-895,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),81,3,106,0.43,Hard
+joshi-032,Atmosphere,Atmosphere,44,3,92,0.41,Hard
+joshi-052,Atmospheric Pressure,Atmospheric Pressure,42,3,60,0.58,Medium
+joshi-aug-845,Stability and Instability,Stability and Instability,68,3,67,0.55,Medium
+joshi-045,Atmosphere,Atmosphere,66,3,26,0.92,Easy
+joshi-aug-976,Satellite Meteorology,Satellite Meteorology,106,3,70,0.66,Medium
+joshi-512,Meteorological Services for Aviation,Meteorological Services for Aviation,29,3,33,0.79,Easy
+joshi-165,Winds,Winds,67,3,52,0.6,Medium
+joshi-aug-836,Visibility and Fog,Visibility and Fog,45,3,34,0.85,Easy
+joshi-320,Thunderstorm,Thunderstorm,17,3,56,0.57,Medium
+joshi-072,Atmospheric Pressure,Atmospheric Pressure,46,3,90,0.32,Hard
+joshi-aug-950,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),101,3,69,0.64,Medium
+joshi-500,Meteorological Services for Aviation,Meteorological Services for Aviation,52,3,35,0.83,Easy
+joshi-104,Temperature,Temperature,55,3,64,0.53,Medium
+joshi-499,Meteorological Services for Aviation,Meteorological Services for Aviation,42,3,41,0.83,Easy
+joshi-066,Atmospheric Pressure,Atmospheric Pressure,58,3,51,0.6,Medium
+joshi-565,Radar Meteorology,Radar Meteorology,91,3,88,0.36,Hard
+joshi-378,Jet Streams,Jet Streams,86,3,81,0.41,Hard
+joshi-aug-935,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,86,3,42,0.85,Easy
+joshi-081,Atmospheric Pressure,Atmospheric Pressure,68,3,106,0.29,Hard
+joshi-297,Ice Accretion,Ice Accretion,37,3,55,0.55,Medium
+joshi-270,Precipitation,Precipitation,68,3,22,0.87,Easy
+joshi-096,Temperature,Temperature,76,3,87,0.45,Hard
+joshi-351,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,52,3,46,0.63,Medium
+joshi-240,Stability and Instability,Stability and Instability,20,3,25,0.92,Easy
+joshi-569,Satellite Meteorology,Satellite Meteorology,45,3,26,0.93,Easy
+joshi-236,Stability and Instability,Stability and Instability,27,3,106,0.5,Hard
+joshi-027,Atmosphere,Atmosphere,69,3,119,0.43,Hard
+joshi-aug-885,General Circulation,General Circulation,58,3,26,0.94,Easy
+joshi-555,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),81,3,42,0.75,Easy
+joshi-170,Winds,Winds,57,3,47,0.62,Medium
+joshi-aug-928,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,99,3,26,0.86,Easy
+joshi-025,Atmosphere,Atmosphere,27,3,50,0.64,Medium
+joshi-aug-916,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),111,3,70,0.6,Medium
+joshi-060,Atmospheric Pressure,Atmospheric Pressure,52,3,28,0.85,Easy
+joshi-158,Winds,Winds,63,3,33,0.93,Easy
+joshi-088,Temperature,Temperature,73,3,50,0.66,Medium
+joshi-526,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),49,3,92,0.34,Hard
+joshi-428,Tropical Systems,Tropical Systems,36,3,50,0.55,Medium
+joshi-aug-938,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),68,3,58,0.6,Medium
+joshi-091,Temperature,Temperature,46,3,48,0.59,Medium
+joshi-130,Air Density,Air Density,56,3,47,0.64,Medium
+joshi-323,Thunderstorm,Thunderstorm,26,3,92,0.41,Hard
+joshi-054,Atmospheric Pressure,Atmospheric Pressure,54,3,67,0.6,Medium
+joshi-308,Thunderstorm,Thunderstorm,40,3,42,0.92,Easy
+joshi-aug-999,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,100,3,50,0.59,Medium
+joshi-114,Temperature,Temperature,42,3,37,0.83,Easy
+joshi-aug-857,Precipitation,Precipitation,59,3,25,0.95,Easy
+joshi-aug-960,Radar Meteorology,Radar Meteorology,88,3,117,0.26,Hard
+joshi-266,Optical Phenomena,Optical Phenomena,71,3,74,0.7,Medium
+joshi-aug-925,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,127,3,25,0.9,Easy
+joshi-510,Meteorological Services for Aviation,Meteorological Services for Aviation,9,3,41,0.84,Easy
+joshi-575,Satellite Meteorology,Satellite Meteorology,83,3,45,0.7,Medium
+joshi-238,Stability and Instability,Stability and Instability,21,3,74,0.63,Medium
+joshi-505,Meteorological Services for Aviation,Meteorological Services for Aviation,28,3,59,0.56,Medium
+joshi-aug-815,Air Density,Air Density,79,3,53,0.6,Medium
+joshi-534,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),49,3,24,0.94,Easy
+joshi-549,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),54,3,40,0.76,Easy
+joshi-406,Clear Air Turbulence,Clear Air Turbulence,87,4,38,0.75,Easy
+joshi-aug-860,Ice Accretion,Ice Accretion,79,3,37,0.8,Easy
+joshi-182,Winds,Winds,55,3,61,0.61,Medium
+joshi-016,Atmosphere,Atmosphere,31,3,50,0.65,Medium
+joshi-227,Vertical Motion and Clouds,Vertical Motion and Clouds,47,3,72,0.61,Medium
+joshi-aug-984,Altimetry and Pressure Settings,Altimetry and Pressure Settings,127,3,98,0.35,Hard
+joshi-113,Temperature,Temperature,46,3,52,0.57,Medium
+joshi-aug-946,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),54,3,105,0.35,Hard
+joshi-254,Optical Phenomena,Optical Phenomena,40,3,39,0.92,Easy
+joshi-530,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),57,3,48,0.69,Medium
+joshi-aug-854,Precipitation,Precipitation,59,3,39,0.83,Easy
+joshi-178,Winds,Winds,70,3,95,0.35,Hard
+joshi-aug-837,Vertical Motion and Clouds,Vertical Motion and Clouds,62,3,27,0.93,Easy
+joshi-aug-853,Precipitation,Precipitation,69,3,72,0.63,Medium
+joshi-229,Stability and Instability,Stability and Instability,37,3,104,0.5,Hard
+joshi-161,Winds,Winds,82,3,66,0.64,Medium
+joshi-467,Climatology of India,Climatology of India,80,4,38,0.75,Easy
+joshi-073,Atmospheric Pressure,Atmospheric Pressure,67,3,76,0.27,Hard
+joshi-aug-867,Clear Air Turbulence,Clear Air Turbulence,123,3,91,0.22,Hard
+joshi-aug-821,Humidity,Humidity,69,3,74,0.64,Medium
+joshi-191,Visibility and Fog,Visibility and Fog,43,3,122,0.29,Hard
+joshi-595,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,115,3,42,0.78,Easy
+joshi-330,Thunderstorm,Thunderstorm,46,3,62,0.66,Medium
+joshi-579,Altimetry and Pressure Settings,Altimetry and Pressure Settings,111,3,32,0.9,Easy
+joshi-aug-991,Altimetry and Pressure Settings,Altimetry and Pressure Settings,68,3,84,0.31,Hard
+joshi-aug-829,Humidity,Humidity,89,3,53,0.67,Medium
+joshi-299,Ice Accretion,Ice Accretion,105,3,50,0.67,Medium
+joshi-006,Atmosphere,Atmosphere,42,3,104,0.39,Hard
+joshi-197,Visibility and Fog,Visibility and Fog,57,3,68,0.59,Medium
+joshi-aug-855,Precipitation,Precipitation,59,3,52,0.61,Medium
+joshi-485,General Circulation,General Circulation,67,3,59,0.64,Medium
+joshi-aug-970,Satellite Meteorology,Satellite Meteorology,76,3,45,0.64,Medium
+joshi-548,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),85,3,34,0.86,Easy
+joshi-244,Stability and Instability,Stability and Instability,38,3,113,0.43,Hard
+joshi-306,Ice Accretion,Ice Accretion,43,3,86,0.43,Hard
+joshi-180,Winds,Winds,71,3,42,0.89,Easy
+joshi-116,Temperature,Temperature,26,3,30,0.93,Easy
+joshi-239,Stability and Instability,Stability and Instability,31,3,31,0.81,Easy
+joshi-aug-964,Radar Meteorology,Radar Meteorology,88,3,103,0.23,Hard
+joshi-327,Thunderstorm,Thunderstorm,26,3,67,0.65,Medium
+joshi-558,Radar Meteorology,Radar Meteorology,95,3,52,0.64,Medium
+joshi-aug-850,Optical Phenomena,Optical Phenomena,23,3,38,0.81,Easy
+joshi-aug-900,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),133,3,39,0.92,Easy
+joshi-395,Jet Streams,Jet Streams,80,3,73,0.62,Medium
+joshi-222,Vertical Motion and Clouds,Vertical Motion and Clouds,50,3,56,0.59,Medium
+joshi-153,Winds,Winds,51,3,39,0.92,Easy
+joshi-043,Atmosphere,Atmosphere,54,3,91,0.28,Hard
+joshi-542,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,57,3,28,0.93,Easy
+joshi-585,Altimetry and Pressure Settings,Altimetry and Pressure Settings,105,3,98,0.35,Hard
+joshi-aug-875,Clear Air Turbulence,Clear Air Turbulence,133,3,48,0.68,Medium
+joshi-aug-904,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),37,3,73,0.56,Medium
+joshi-151,Winds,Winds,31,3,85,0.38,Hard
+joshi-115,Temperature,Temperature,41,3,26,0.83,Easy
+joshi-aug-813,Air Density,Air Density,29,3,86,0.44,Hard
+joshi-aug-841,Vertical Motion and Clouds,Vertical Motion and Clouds,61,3,124,0.41,Hard
+joshi-392,Jet Streams,Jet Streams,54,3,55,0.56,Medium
+joshi-aug-959,Radar Meteorology,Radar Meteorology,85,3,30,0.76,Easy
+joshi-099,Temperature,Temperature,33,3,71,0.68,Medium
+joshi-aug-814,Air Density,Air Density,21,3,36,0.9,Easy
+joshi-aug-907,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),61,3,57,0.67,Medium
+joshi-aug-995,Altimetry and Pressure Settings,Altimetry and Pressure Settings,127,3,39,0.88,Easy
+joshi-503,Meteorological Services for Aviation,Meteorological Services for Aviation,29,3,64,0.7,Medium
+joshi-126,Air Density,Air Density,53,3,56,0.57,Medium
+joshi-aug-917,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),82,3,59,0.62,Medium
+joshi-188,Winds,Winds,20,3,80,0.41,Hard
+joshi-263,Optical Phenomena,Optical Phenomena,59,3,59,0.71,Medium
+joshi-aug-914,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),61,3,68,0.64,Medium
+joshi-483,General Circulation,General Circulation,175,3,92,0.27,Hard
+joshi-aug-1008,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,100,3,54,0.66,Medium
+joshi-290,Ice Accretion,Ice Accretion,18,3,52,0.62,Medium
+joshi-118,Temperature,Temperature,26,3,34,0.83,Easy
+joshi-553,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),92,3,75,0.44,Hard
+joshi-278,Precipitation,Precipitation,38,3,40,0.88,Easy
+joshi-061,Atmospheric Pressure,Atmospheric Pressure,155,3,71,0.7,Medium
+joshi-341,Thunderstorm,Thunderstorm,13,3,52,0.7,Medium
+joshi-aug-826,Humidity,Humidity,83,3,32,0.92,Easy
+joshi-aug-807,Air Density,Air Density,79,3,49,0.63,Medium
+joshi-490,General Circulation,General Circulation,96,3,62,0.62,Medium
+joshi-aug-985,Altimetry and Pressure Settings,Altimetry and Pressure Settings,68,3,103,0.28,Hard
+joshi-292,Ice Accretion,Ice Accretion,120,3,54,0.62,Medium
+joshi-189,Winds,Winds,79,3,76,0.41,Hard
+joshi-aug-936,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,99,3,29,0.83,Easy
+joshi-258,Optical Phenomena,Optical Phenomena,47,3,113,0.45,Hard
+joshi-273,Precipitation,Precipitation,57,3,55,0.65,Medium
+joshi-231,Stability and Instability,Stability and Instability,24,3,64,0.53,Medium
+joshi-282,Precipitation,Precipitation,67,3,45,0.53,Medium
+joshi-022,Atmosphere,Atmosphere,48,3,38,0.81,Easy
+joshi-369,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,72,3,69,0.6,Medium
+joshi-536,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),82,3,52,0.64,Medium
+joshi-410,Tropical Systems,Tropical Systems,40,3,107,0.37,Hard
+joshi-100,Temperature,Temperature,88,3,27,0.81,Easy
+joshi-aug-908,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),82,3,38,0.81,Easy
+joshi-095,Temperature,Temperature,40,3,52,0.63,Medium
+joshi-583,Altimetry and Pressure Settings,Altimetry and Pressure Settings,122,3,115,0.28,Hard
+joshi-521,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),64,3,25,0.92,Easy
+joshi-049,Atmospheric Pressure,Atmospheric Pressure,47,3,57,0.63,Medium
+joshi-009,Atmosphere,Atmosphere,27,3,30,0.85,Easy
+joshi-123,Temperature,Temperature,49,3,91,0.5,Hard
+joshi-082,Atmospheric Pressure,Atmospheric Pressure,78,3,61,0.66,Medium
+joshi-398,Clear Air Turbulence,Clear Air Turbulence,80,3,101,0.5,Hard
+joshi-aug-834,Visibility and Fog,Visibility and Fog,39,3,75,0.59,Medium
+joshi-322,Thunderstorm,Thunderstorm,32,3,54,0.55,Medium
+joshi-002,Atmosphere,Atmosphere,34,3,62,0.68,Medium
+joshi-aug-874,Clear Air Turbulence,Clear Air Turbulence,42,3,80,0.46,Hard
+joshi-477,Climatology of India,Climatology of India,58,4,72,0.54,Medium
+joshi-042,Atmosphere,Atmosphere,74,3,46,0.58,Medium
+joshi-aug-918,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),49,3,70,0.67,Medium
+joshi-354,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,65,3,69,0.58,Medium
+joshi-050,Atmospheric Pressure,Atmospheric Pressure,29,3,80,0.21,Hard
+joshi-460,Climatology of India,Climatology of India,52,3,49,0.69,Medium
+joshi-591,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,100,3,88,0.38,Hard
+joshi-aug-998,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,97,3,93,0.26,Hard
+joshi-386,Jet Streams,Jet Streams,52,3,125,0.44,Hard
+joshi-405,Clear Air Turbulence,Clear Air Turbulence,112,3,48,0.61,Medium
+joshi-464,Climatology of India,Climatology of India,78,4,61,0.57,Medium
+joshi-aug-966,Radar Meteorology,Radar Meteorology,91,3,114,0.28,Hard
+joshi-051,Atmospheric Pressure,Atmospheric Pressure,40,3,32,0.81,Easy
+joshi-219,Vertical Motion and Clouds,Vertical Motion and Clouds,35,3,99,0.4,Hard
+joshi-359,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,38,3,73,0.71,Medium
+joshi-125,Air Density,Air Density,39,3,32,0.85,Easy
+joshi-274,Precipitation,Precipitation,65,3,33,0.82,Easy
+joshi-119,Temperature,Temperature,25,3,20,0.84,Easy
+joshi-456,Climatology of India,Climatology of India,68,3,53,0.65,Medium
+joshi-275,Precipitation,Precipitation,55,3,68,0.63,Medium
+joshi-aug-846,Stability and Instability,Stability and Instability,37,3,35,0.94,Easy
+joshi-492,General Circulation,General Circulation,61,3,47,0.53,Medium
+joshi-454,Climatology of India,Climatology of India,49,3,55,0.7,Medium
+joshi-387,Jet Streams,Jet Streams,37,3,56,0.53,Medium
+joshi-489,General Circulation,General Circulation,116,3,46,0.65,Medium
+joshi-aug-978,Satellite Meteorology,Satellite Meteorology,123,3,62,0.63,Medium
+joshi-249,Optical Phenomena,Optical Phenomena,37,3,21,0.89,Easy
+joshi-aug-953,Radar Meteorology,Radar Meteorology,95,3,69,0.7,Medium
+joshi-107,Temperature,Temperature,80,3,51,0.66,Medium
+joshi-259,Optical Phenomena,Optical Phenomena,19,3,69,0.59,Medium
+joshi-101,Temperature,Temperature,52,3,47,0.66,Medium
+joshi-aug-835,Visibility and Fog,Visibility and Fog,33,3,111,0.37,Hard
+joshi-aug-923,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,69,3,106,0.22,Hard
+joshi-374,Jet Streams,Jet Streams,48,3,61,0.6,Medium
+joshi-285,Precipitation,Precipitation,65,3,36,0.87,Easy
+joshi-356,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,67,3,62,0.69,Medium
+joshi-aug-858,Ice Accretion,Ice Accretion,18,3,90,0.44,Hard
+joshi-335,Thunderstorm,Thunderstorm,46,3,53,0.55,Medium
+joshi-aug-973,Satellite Meteorology,Satellite Meteorology,76,3,45,0.61,Medium
+joshi-314,Thunderstorm,Thunderstorm,7,3,67,0.62,Medium
+joshi-537,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,61,3,34,0.87,Easy
+joshi-129,Air Density,Air Density,29,3,29,0.84,Easy
+joshi-005,Atmosphere,Atmosphere,20,3,66,0.65,Medium
+joshi-385,Jet Streams,Jet Streams,19,3,69,0.59,Medium
+joshi-333,Thunderstorm,Thunderstorm,52,3,49,0.53,Medium
+joshi-246,Stability and Instability,Stability and Instability,34,3,63,0.61,Medium
+joshi-aug-1001,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,114,3,54,0.56,Medium
+joshi-aug-803,Air Density,Air Density,70,3,25,0.86,Easy
+joshi-400,Clear Air Turbulence,Clear Air Turbulence,95,3,72,0.67,Medium
+joshi-487,General Circulation,General Circulation,46,4,51,0.68,Medium
+joshi-588,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,97,3,32,0.9,Easy
+joshi-026,Atmosphere,Atmosphere,24,3,40,0.85,Easy
+joshi-527,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),111,3,36,0.86,Easy
+joshi-337,Thunderstorm,Thunderstorm,60,3,104,0.3,Hard
+joshi-aug-808,Air Density,Air Density,31,3,85,0.29,Hard
+joshi-252,Optical Phenomena,Optical Phenomena,29,3,69,0.58,Medium
+joshi-aug-902,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),36,3,97,0.47,Hard
+joshi-132,Air Density,Air Density,27,3,60,0.54,Medium
+joshi-399,Clear Air Turbulence,Clear Air Turbulence,80,3,38,0.92,Easy
+joshi-371,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,42,3,54,0.62,Medium
+joshi-470,Climatology of India,Climatology of India,55,3,62,0.53,Medium
+joshi-aug-806,Air Density,Air Density,21,3,25,0.89,Easy
+joshi-aug-909,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),111,3,42,0.81,Easy
+joshi-aug-983,Altimetry and Pressure Settings,Altimetry and Pressure Settings,111,3,33,0.91,Easy
+joshi-aug-818,Humidity,Humidity,69,3,32,0.8,Easy
+joshi-074,Atmospheric Pressure,Atmospheric Pressure,40,3,100,0.35,Hard
+joshi-159,Winds,Winds,38,3,50,0.6,Medium
+joshi-216,Vertical Motion and Clouds,Vertical Motion and Clouds,62,3,67,0.54,Medium
+joshi-295,Ice Accretion,Ice Accretion,75,3,49,0.53,Medium
+joshi-044,Atmosphere,Atmosphere,56,3,64,0.68,Medium
+joshi-084,Atmospheric Pressure,Atmospheric Pressure,48,3,50,0.58,Medium
+joshi-aug-920,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),82,3,42,0.87,Easy
+joshi-131,Air Density,Air Density,21,3,74,0.65,Medium
+joshi-272,Precipitation,Precipitation,59,3,65,0.56,Medium
+joshi-198,Visibility and Fog,Visibility and Fog,26,3,72,0.59,Medium
+joshi-aug-866,Clear Air Turbulence,Clear Air Turbulence,133,3,39,0.75,Easy
+joshi-076,Atmospheric Pressure,Atmospheric Pressure,86,3,40,0.91,Easy
+joshi-090,Temperature,Temperature,56,3,38,0.9,Easy
+joshi-aug-937,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),71,3,42,0.86,Easy
+joshi-316,Thunderstorm,Thunderstorm,32,3,71,0.68,Medium
+joshi-211,Vertical Motion and Clouds,Vertical Motion and Clouds,19,3,68,0.7,Medium
+joshi-136,Humidity,Humidity,89,3,69,0.7,Medium
+joshi-012,Atmosphere,Atmosphere,36,3,55,0.57,Medium
+joshi-502,Meteorological Services for Aviation,Meteorological Services for Aviation,43,3,36,0.83,Easy
+joshi-449,Climatology of India,Climatology of India,27,3,71,0.57,Medium
+joshi-aug-819,Humidity,Humidity,142,3,35,0.8,Easy
+joshi-aug-878,Clear Air Turbulence,Clear Air Turbulence,75,3,34,0.93,Easy
+joshi-aug-941,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),68,3,37,0.85,Easy
+joshi-aug-958,Radar Meteorology,Radar Meteorology,82,3,81,0.23,Hard
+joshi-155,Winds,Winds,51,3,53,0.7,Medium
+joshi-497,Meteorological Services for Aviation,Meteorological Services for Aviation,35,3,62,0.57,Medium
+joshi-241,Stability and Instability,Stability and Instability,119,3,65,0.66,Medium
+joshi-206,Visibility and Fog,Visibility and Fog,33,3,73,0.58,Medium
+joshi-aug-962,Radar Meteorology,Radar Meteorology,57,3,58,0.63,Medium
+joshi-aug-903,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),133,3,71,0.64,Medium
+joshi-aug-1003,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,144,3,120,0.42,Hard
+joshi-311,Thunderstorm,Thunderstorm,34,3,51,0.55,Medium
+joshi-350,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,66,3,59,0.54,Medium
+joshi-264,Optical Phenomena,Optical Phenomena,43,3,53,0.6,Medium
+joshi-582,Altimetry and Pressure Settings,Altimetry and Pressure Settings,129,3,92,0.33,Hard
+joshi-243,Stability and Instability,Stability and Instability,35,3,120,0.35,Hard
+joshi-193,Visibility and Fog,Visibility and Fog,78,3,69,0.68,Medium
+joshi-207,Visibility and Fog,Visibility and Fog,54,3,26,0.85,Easy
+joshi-aug-811,Air Density,Air Density,21,3,36,0.84,Easy
+joshi-aug-933,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,66,3,65,0.67,Medium
+joshi-220,Vertical Motion and Clouds,Vertical Motion and Clouds,38,3,47,0.68,Medium
+joshi-334,Thunderstorm,Thunderstorm,33,3,49,0.56,Medium
+joshi-aug-862,Ice Accretion,Ice Accretion,147,3,29,0.86,Easy
+joshi-194,Visibility and Fog,Visibility and Fog,39,3,50,0.57,Medium
+joshi-003,Atmosphere,Atmosphere,32,3,49,0.54,Medium
+joshi-098,Temperature,Temperature,17,3,55,0.58,Medium
+joshi-560,Radar Meteorology,Radar Meteorology,89,3,90,0.32,Hard
+joshi-281,Precipitation,Precipitation,42,3,51,0.68,Medium
+joshi-373,Jet Streams,Jet Streams,16,3,71,0.56,Medium
+joshi-343,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,54,3,32,0.87,Easy
+joshi-013,Atmosphere,Atmosphere,40,3,68,0.61,Medium
+joshi-493,General Circulation,General Circulation,79,3,59,0.68,Medium
+joshi-aug-893,Meteorological Services for Aviation,Meteorological Services for Aviation,35,3,72,0.68,Medium
+joshi-427,Tropical Systems,Tropical Systems,44,3,71,0.55,Medium
+joshi-440,Tropical Systems,Tropical Systems,16,3,102,0.28,Hard
+joshi-478,Climatology of India,Climatology of India,37,3,56,0.6,Medium
+joshi-494,Meteorological Services for Aviation,Meteorological Services for Aviation,97,3,58,0.67,Medium
+joshi-546,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,69,3,30,0.9,Easy
+joshi-aug-831,Visibility and Fog,Visibility and Fog,45,3,96,0.45,Hard
+joshi-075,Atmospheric Pressure,Atmospheric Pressure,30,3,117,0.33,Hard
+joshi-361,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,60,3,25,0.82,Easy
+joshi-279,Precipitation,Precipitation,46,3,45,0.53,Medium
+joshi-145,Winds,Winds,61,3,62,0.57,Medium
+joshi-469,Climatology of India,Climatology of India,71,4,106,0.5,Hard
+joshi-435,Tropical Systems,Tropical Systems,39,3,34,0.93,Easy
+joshi-364,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,24,3,121,0.36,Hard
+joshi-aug-963,Radar Meteorology,Radar Meteorology,95,3,25,0.9,Easy
+joshi-190,Visibility and Fog,Visibility and Fog,45,3,53,0.7,Medium
+joshi-250,Optical Phenomena,Optical Phenomena,28,3,40,0.85,Easy
+joshi-089,Temperature,Temperature,9,3,27,0.91,Easy
+joshi-415,Tropical Systems,Tropical Systems,69,4,58,0.68,Medium
+joshi-aug-865,Clear Air Turbulence,Clear Air Turbulence,123,3,63,0.56,Medium
+joshi-029,Atmosphere,Atmosphere,54,3,84,0.22,Hard
+joshi-507,Meteorological Services for Aviation,Meteorological Services for Aviation,33,3,35,0.92,Easy
+joshi-562,Radar Meteorology,Radar Meteorology,95,3,50,0.67,Medium
+joshi-352,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,39,3,49,0.58,Medium
+joshi-aug-986,Altimetry and Pressure Settings,Altimetry and Pressure Settings,111,3,40,0.94,Easy
+joshi-140,Humidity,Humidity,64,3,35,0.91,Easy
+joshi-080,Atmospheric Pressure,Atmospheric Pressure,72,3,66,0.56,Medium
+joshi-135,Humidity,Humidity,142,3,53,0.59,Medium
+joshi-501,Meteorological Services for Aviation,Meteorological Services for Aviation,27,3,61,0.55,Medium
+joshi-040,Atmosphere,Atmosphere,47,3,48,0.59,Medium
+joshi-083,Atmospheric Pressure,Atmospheric Pressure,104,3,107,0.41,Hard
+joshi-271,Precipitation,Precipitation,59,3,36,0.81,Easy
+joshi-036,Atmosphere,Atmosphere,85,3,84,0.39,Hard
+joshi-162,Winds,Winds,20,3,53,0.67,Medium
+joshi-aug-877,Clear Air Turbulence,Clear Air Turbulence,42,3,103,0.45,Hard
+joshi-195,Visibility and Fog,Visibility and Fog,58,3,69,0.69,Medium
+joshi-248,Optical Phenomena,Optical Phenomena,29,3,55,0.62,Medium
+joshi-242,Stability and Instability,Stability and Instability,37,3,63,0.61,Medium
+joshi-543,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,127,3,50,0.66,Medium
+joshi-046,Atmospheric Pressure,Atmospheric Pressure,36,3,120,0.29,Hard
+joshi-209,Vertical Motion and Clouds,Vertical Motion and Clouds,19,3,54,0.57,Medium
+joshi-aug-992,Altimetry and Pressure Settings,Altimetry and Pressure Settings,127,3,49,0.56,Medium
+joshi-200,Visibility and Fog,Visibility and Fog,83,3,67,0.69,Medium
+joshi-256,Optical Phenomena,Optical Phenomena,36,3,57,0.65,Medium
+joshi-aug-848,Optical Phenomena,Optical Phenomena,40,3,38,0.88,Easy
+joshi-550,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),71,3,48,0.7,Medium
+joshi-aug-876,Clear Air Turbulence,Clear Air Turbulence,80,3,49,0.67,Medium
+joshi-aug-965,Radar Meteorology,Radar Meteorology,128,3,68,0.65,Medium
+joshi-038,Atmosphere,Atmosphere,37,3,111,0.38,Hard
+joshi-495,Meteorological Services for Aviation,Meteorological Services for Aviation,97,3,69,0.56,Medium
+joshi-001,Atmosphere,Atmosphere,29,3,39,0.86,Easy
+joshi-160,Winds,Winds,19,3,87,0.24,Hard
+joshi-245,Stability and Instability,Stability and Instability,104,3,29,0.88,Easy
+joshi-057,Atmospheric Pressure,Atmospheric Pressure,72,3,35,0.8,Easy
+joshi-325,Thunderstorm,Thunderstorm,25,3,59,0.7,Medium
+joshi-aug-884,General Circulation,General Circulation,71,3,27,0.75,Easy
+joshi-aug-883,General Circulation,General Circulation,175,3,35,0.83,Easy
+joshi-085,Atmospheric Pressure,Atmospheric Pressure,77,3,104,0.21,Hard
+joshi-574,Satellite Meteorology,Satellite Meteorology,106,3,80,0.45,Hard
+joshi-336,Thunderstorm,Thunderstorm,162,3,71,0.54,Medium
+joshi-437,Tropical Systems,Tropical Systems,55,4,57,0.66,Medium
+joshi-097,Temperature,Temperature,50,3,40,0.79,Easy
+joshi-556,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),59,3,84,0.38,Hard
+joshi-451,Climatology of India,Climatology of India,17,3,45,0.55,Medium
+joshi-368,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,40,3,71,0.59,Medium
+joshi-aug-827,Humidity,Humidity,95,3,39,0.86,Easy
+joshi-aug-838,Vertical Motion and Clouds,Vertical Motion and Clouds,19,3,34,0.89,Easy
+joshi-aug-954,Radar Meteorology,Radar Meteorology,81,3,81,0.26,Hard
+joshi-aug-940,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),114,3,104,0.41,Hard
+joshi-289,Ice Accretion,Ice Accretion,79,3,72,0.54,Medium
+joshi-086,Temperature,Temperature,57,3,45,0.67,Medium
+joshi-164,Winds,Winds,63,3,63,0.64,Medium
+joshi-aug-890,Meteorological Services for Aviation,Meteorological Services for Aviation,40,3,42,0.86,Easy
+joshi-396,Jet Streams,Jet Streams,41,3,62,0.54,Medium
+joshi-349,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,56,3,62,0.57,Medium
+joshi-055,Atmospheric Pressure,Atmospheric Pressure,183,3,78,0.26,Hard
+joshi-aug-955,Radar Meteorology,Radar Meteorology,57,3,28,0.82,Easy
+joshi-aug-871,Clear Air Turbulence,Clear Air Turbulence,87,4,53,0.62,Medium
+joshi-aug-844,Stability and Instability,Stability and Instability,68,3,42,0.85,Easy
+joshi-525,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),74,3,88,0.38,Hard
+joshi-aug-849,Optical Phenomena,Optical Phenomena,71,3,60,0.61,Medium
+joshi-262,Optical Phenomena,Optical Phenomena,24,3,28,0.94,Easy
+joshi-393,Jet Streams,Jet Streams,5,3,72,0.55,Medium
+joshi-aug-892,Meteorological Services for Aviation,Meteorological Services for Aviation,97,3,95,0.26,Hard
+joshi-329,Thunderstorm,Thunderstorm,45,3,55,0.57,Medium
+joshi-348,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,39,3,63,0.53,Medium
+joshi-416,Tropical Systems,Tropical Systems,120,3,58,0.56,Medium
+joshi-432,Tropical Systems,Tropical Systems,33,3,58,0.63,Medium
+joshi-363,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,34,3,70,0.64,Medium
+joshi-303,Ice Accretion,Ice Accretion,111,3,58,0.53,Medium
+joshi-438,Tropical Systems,Tropical Systems,96,4,121,0.38,Hard
+joshi-aug-817,Humidity,Humidity,69,3,42,0.86,Easy
+joshi-aug-847,Stability and Instability,Stability and Instability,27,3,60,0.61,Medium
+joshi-aug-881,General Circulation,General Circulation,116,3,33,0.93,Easy
+joshi-518,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),49,3,52,0.62,Medium
+joshi-aug-873,Clear Air Turbulence,Clear Air Turbulence,41,4,39,0.9,Easy
+joshi-402,Clear Air Turbulence,Clear Air Turbulence,42,3,63,0.64,Medium
+joshi-287,Precipitation,Precipitation,69,3,32,0.86,Easy
+joshi-aug-993,Altimetry and Pressure Settings,Altimetry and Pressure Settings,127,3,95,0.22,Hard
+joshi-436,Tropical Systems,Tropical Systems,36,3,53,0.59,Medium
+joshi-288,Ice Accretion,Ice Accretion,78,3,39,0.81,Easy
+joshi-247,Stability and Instability,Stability and Instability,22,3,50,0.57,Medium
+joshi-476,Climatology of India,Climatology of India,42,4,64,0.65,Medium
+joshi-aug-852,Optical Phenomena,Optical Phenomena,37,3,25,0.78,Easy
+joshi-121,Temperature,Temperature,61,3,33,0.86,Easy
+joshi-228,Stability and Instability,Stability and Instability,38,3,59,0.53,Medium
+joshi-215,Vertical Motion and Clouds,Vertical Motion and Clouds,61,3,48,0.59,Medium
+joshi-355,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,82,3,65,0.56,Medium
+joshi-aug-1010,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,130,3,38,0.81,Easy
+joshi-079,Atmospheric Pressure,Atmospheric Pressure,73,3,67,0.67,Medium
+joshi-401,Clear Air Turbulence,Clear Air Turbulence,75,3,49,0.68,Medium
+joshi-230,Stability and Instability,Stability and Instability,27,3,101,0.25,Hard
+joshi-aug-1004,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,114,3,40,0.76,Easy
+joshi-298,Ice Accretion,Ice Accretion,76,3,32,0.88,Easy
+joshi-573,Satellite Meteorology,Satellite Meteorology,93,3,85,0.41,Hard
+joshi-529,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),46,3,45,0.89,Easy
+joshi-aug-952,Radar Meteorology,Radar Meteorology,91,3,32,0.94,Easy
+joshi-aug-996,Altimetry and Pressure Settings,Altimetry and Pressure Settings,101,3,38,0.89,Easy
+joshi-277,Precipitation,Precipitation,34,3,61,0.64,Medium
+joshi-133,Air Density,Air Density,70,3,32,0.85,Easy
+joshi-143,Humidity,Humidity,61,3,20,0.89,Easy
+joshi-aug-880,General Circulation,General Circulation,118,3,74,0.68,Medium
+joshi-491,General Circulation,General Circulation,153,3,68,0.58,Medium
+joshi-181,Winds,Winds,86,3,64,0.6,Medium
+joshi-384,Jet Streams,Jet Streams,93,3,71,0.69,Medium
+joshi-aug-889,Meteorological Services for Aviation,Meteorological Services for Aviation,40,3,29,0.81,Easy
+joshi-213,Vertical Motion and Clouds,Vertical Motion and Clouds,88,3,80,0.25,Hard
+joshi-444,Tropical Systems,Tropical Systems,53,4,52,0.66,Medium
+joshi-aug-929,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,33,3,128,0.37,Hard
+joshi-358,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,20,3,72,0.59,Medium
+joshi-474,Climatology of India,Climatology of India,10,3,121,0.37,Hard
+joshi-067,Atmospheric Pressure,Atmospheric Pressure,45,3,55,0.53,Medium
+joshi-154,Winds,Winds,78,3,54,0.63,Medium
+joshi-357,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,21,3,57,0.62,Medium
+joshi-173,Winds,Winds,111,3,63,0.6,Medium
+joshi-305,Ice Accretion,Ice Accretion,47,3,65,0.63,Medium
+joshi-418,Tropical Systems,Tropical Systems,51,4,57,0.62,Medium
+joshi-593,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,150,3,50,0.69,Medium
+joshi-346,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,57,3,28,0.85,Easy
+joshi-aug-957,Radar Meteorology,Radar Meteorology,95,3,28,0.89,Easy
+joshi-417,Tropical Systems,Tropical Systems,117,4,50,0.54,Medium
+joshi-233,Stability and Instability,Stability and Instability,38,3,27,0.79,Easy
+joshi-531,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),74,3,85,0.35,Hard
+joshi-594,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,130,3,36,0.85,Easy
+joshi-389,Jet Streams,Jet Streams,61,3,66,0.56,Medium
+joshi-421,Tropical Systems,Tropical Systems,52,4,80,0.5,Hard
+joshi-407,Tropical Systems,Tropical Systems,42,3,90,0.27,Hard
+joshi-554,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),68,3,50,0.65,Medium
+joshi-513,Meteorological Services for Aviation,Meteorological Services for Aviation,19,3,37,0.8,Easy
+joshi-576,Satellite Meteorology,Satellite Meteorology,76,3,50,0.66,Medium
+joshi-030,Atmosphere,Atmosphere,116,3,117,0.3,Hard
+joshi-138,Humidity,Humidity,69,3,60,0.63,Medium
+joshi-409,Tropical Systems,Tropical Systems,62,3,56,0.65,Medium
+joshi-179,Winds,Winds,63,3,109,0.29,Hard
+joshi-105,Temperature,Temperature,74,3,117,0.5,Hard
+joshi-353,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,26,3,124,0.43,Hard
+joshi-aug-861,Ice Accretion,Ice Accretion,106,3,98,0.42,Hard
+joshi-078,Atmospheric Pressure,Atmospheric Pressure,83,3,33,0.75,Easy
+joshi-aug-969,Satellite Meteorology,Satellite Meteorology,90,3,39,0.87,Easy
+joshi-aug-842,Vertical Motion and Clouds,Vertical Motion and Clouds,61,3,66,0.64,Medium
+joshi-aug-947,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),59,3,65,0.56,Medium
+joshi-196,Visibility and Fog,Visibility and Fog,52,3,30,0.75,Easy
+joshi-205,Visibility and Fog,Visibility and Fog,29,3,33,0.92,Easy
+joshi-578,Altimetry and Pressure Settings,Altimetry and Pressure Settings,68,3,28,0.94,Easy
+joshi-208,Visibility and Fog,Visibility and Fog,78,3,58,0.66,Medium
+joshi-321,Thunderstorm,Thunderstorm,40,3,82,0.27,Hard
+joshi-aug-927,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,33,3,74,0.68,Medium
+joshi-149,Winds,Winds,57,3,51,0.69,Medium
+joshi-572,Satellite Meteorology,Satellite Meteorology,89,3,29,0.9,Easy
+joshi-528,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),55,3,28,0.91,Easy
+joshi-aug-1005,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,97,3,74,0.7,Medium
+joshi-366,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,42,3,69,0.54,Medium
+joshi-592,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,90,3,92,0.34,Hard
+joshi-063,Atmospheric Pressure,Atmospheric Pressure,76,3,57,0.56,Medium
+joshi-422,Tropical Systems,Tropical Systems,19,4,73,0.54,Medium
+joshi-339,Thunderstorm,Thunderstorm,67,3,56,0.53,Medium
+joshi-023,Atmosphere,Atmosphere,46,3,64,0.56,Medium
+joshi-276,Precipitation,Precipitation,21,3,70,0.63,Medium
+joshi-aug-942,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),92,3,33,0.82,Easy
+joshi-506,Meteorological Services for Aviation,Meteorological Services for Aviation,33,3,74,0.56,Medium
+joshi-232,Stability and Instability,Stability and Instability,43,3,62,0.69,Medium
+joshi-265,Optical Phenomena,Optical Phenomena,62,3,125,0.38,Hard
+joshi-187,Winds,Winds,43,3,109,0.22,Hard
+joshi-218,Vertical Motion and Clouds,Vertical Motion and Clouds,33,3,94,0.42,Hard
+joshi-457,Climatology of India,Climatology of India,75,3,57,0.66,Medium
+joshi-068,Atmospheric Pressure,Atmospheric Pressure,39,3,91,0.44,Hard
+joshi-462,Climatology of India,Climatology of India,71,3,32,0.88,Easy
+joshi-284,Precipitation,Precipitation,40,3,58,0.6,Medium
+joshi-183,Winds,Winds,84,3,42,0.91,Easy
+joshi-aug-971,Satellite Meteorology,Satellite Meteorology,106,3,93,0.25,Hard
+joshi-aug-816,Humidity,Humidity,89,3,68,0.59,Medium
+joshi-185,Winds,Winds,65,3,47,0.55,Medium
+joshi-aug-901,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),49,3,35,0.83,Easy
+joshi-aug-989,Altimetry and Pressure Settings,Altimetry and Pressure Settings,76,3,59,0.66,Medium
+joshi-aug-843,Stability and Instability,Stability and Instability,31,3,48,0.67,Medium
+joshi-423,Tropical Systems,Tropical Systems,46,3,57,0.54,Medium
+joshi-557,Radar Meteorology,Radar Meteorology,81,3,48,0.68,Medium
+joshi-523,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),37,3,30,0.89,Easy
+joshi-397,Clear Air Turbulence,Clear Air Turbulence,123,3,63,0.63,Medium
+joshi-379,Jet Streams,Jet Streams,58,3,61,0.66,Medium
+joshi-087,Temperature,Temperature,48,3,51,0.63,Medium
+joshi-021,Atmosphere,Atmosphere,41,3,99,0.23,Hard
+joshi-504,Meteorological Services for Aviation,Meteorological Services for Aviation,62,3,70,0.67,Medium
+joshi-326,Thunderstorm,Thunderstorm,29,3,86,0.26,Hard
+joshi-093,Temperature,Temperature,54,3,64,0.56,Medium
+joshi-070,Atmospheric Pressure,Atmospheric Pressure,39,3,123,0.29,Hard
+joshi-564,Radar Meteorology,Radar Meteorology,128,3,35,0.88,Easy
+joshi-aug-891,Meteorological Services for Aviation,Meteorological Services for Aviation,38,3,56,0.56,Medium
+joshi-069,Atmospheric Pressure,Atmospheric Pressure,57,3,110,0.33,Hard
+joshi-aug-980,Satellite Meteorology,Satellite Meteorology,89,3,54,0.65,Medium
+joshi-aug-922,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,89,3,40,0.84,Easy
+joshi-aug-972,Satellite Meteorology,Satellite Meteorology,89,3,73,0.63,Medium
+joshi-516,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),30,3,35,0.84,Easy
+joshi-203,Visibility and Fog,Visibility and Fog,50,3,37,0.85,Easy
+joshi-034,Atmosphere,Atmosphere,41,3,115,0.24,Hard
+joshi-aug-906,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),69,3,35,0.87,Easy
+joshi-aug-921,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),57,3,51,0.6,Medium
+joshi-aug-886,General Circulation,General Circulation,111,3,40,0.85,Easy
+joshi-522,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),59,3,55,0.65,Medium
+joshi-aug-912,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),74,3,55,0.7,Medium
+joshi-315,Thunderstorm,Thunderstorm,40,3,101,0.42,Hard
+joshi-202,Visibility and Fog,Visibility and Fog,30,3,69,0.63,Medium
+joshi-253,Optical Phenomena,Optical Phenomena,69,3,49,0.67,Medium
+joshi-563,Radar Meteorology,Radar Meteorology,88,3,38,0.84,Easy
+joshi-544,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,92,3,55,0.63,Medium
+joshi-106,Temperature,Temperature,41,3,65,0.64,Medium
+joshi-aug-897,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),74,3,97,0.43,Hard
+joshi-120,Temperature,Temperature,36,3,50,0.66,Medium
+joshi-347,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,15,3,52,0.63,Medium
+joshi-137,Humidity,Humidity,83,3,39,0.92,Easy
+joshi-039,Atmosphere,Atmosphere,54,3,78,0.39,Hard
+joshi-157,Winds,Winds,65,3,125,0.32,Hard
+joshi-aug-930,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,92,3,28,0.9,Easy
+joshi-aug-1011,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,90,3,52,0.56,Medium
+joshi-481,General Circulation,General Circulation,35,3,101,0.41,Hard
+joshi-426,Tropical Systems,Tropical Systems,44,3,96,0.45,Hard
+joshi-aug-934,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,86,3,34,0.81,Easy
+joshi-aug-974,Satellite Meteorology,Satellite Meteorology,83,3,126,0.22,Hard
+joshi-413,Tropical Systems,Tropical Systems,78,3,72,0.63,Medium
+joshi-128,Air Density,Air Density,31,3,61,0.54,Medium
+joshi-166,Winds,Winds,64,3,67,0.59,Medium
+joshi-156,Winds,Winds,67,3,47,0.61,Medium
+joshi-484,General Circulation,General Circulation,105,3,53,0.68,Medium
+joshi-056,Atmospheric Pressure,Atmospheric Pressure,93,3,49,0.57,Medium
+joshi-aug-899,Aviation Weather Reports (METAR and SPECI),Aviation Weather Reports (METAR and SPECI),69,3,109,0.26,Hard
+joshi-aug-994,Altimetry and Pressure Settings,Altimetry and Pressure Settings,68,3,64,0.65,Medium
+joshi-391,Jet Streams,Jet Streams,22,3,61,0.67,Medium
+joshi-459,Climatology of India,Climatology of India,23,3,73,0.57,Medium
+joshi-304,Ice Accretion,Ice Accretion,167,3,55,0.55,Medium
+joshi-360,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,39,3,78,0.31,Hard
+joshi-318,Thunderstorm,Thunderstorm,23,3,58,0.53,Medium
+joshi-048,Atmospheric Pressure,Atmospheric Pressure,33,3,59,0.69,Medium
+joshi-aug-939,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),92,3,124,0.36,Hard
+joshi-568,Satellite Meteorology,Satellite Meteorology,90,3,34,0.87,Easy
+joshi-566,Radar Meteorology,Radar Meteorology,57,3,95,0.31,Hard
+joshi-480,General Circulation,General Circulation,111,3,67,0.54,Medium
+joshi-020,Atmosphere,Atmosphere,53,3,58,0.67,Medium
+joshi-019,Atmosphere,Atmosphere,65,3,21,0.85,Easy
+joshi-587,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,151,3,34,0.86,Easy
+joshi-171,Winds,Winds,57,3,59,0.62,Medium
+joshi-aug-926,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,99,3,70,0.6,Medium
+joshi-aug-822,Humidity,Humidity,104,3,42,0.82,Easy
+joshi-017,Atmosphere,Atmosphere,34,3,122,0.22,Hard
+joshi-286,Precipitation,Precipitation,33,3,68,0.63,Medium
+joshi-aug-944,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),92,3,66,0.64,Medium
+joshi-aug-949,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),55,3,55,0.6,Medium
+joshi-aug-1006,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,100,3,90,0.22,Hard
+joshi-584,Altimetry and Pressure Settings,Altimetry and Pressure Settings,101,3,30,0.91,Easy
+joshi-294,Ice Accretion,Ice Accretion,178,3,86,0.38,Hard
+joshi-370,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,19,3,56,0.61,Medium
+joshi-439,Tropical Systems,Tropical Systems,36,3,64,0.68,Medium
+joshi-412,Tropical Systems,Tropical Systems,30,3,56,0.58,Medium
+joshi-035,Atmosphere,Atmosphere,81,3,92,0.4,Hard
+joshi-aug-924,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,69,3,40,0.9,Easy
+joshi-186,Winds,Winds,7,3,45,0.53,Medium
+joshi-aug-975,Satellite Meteorology,Satellite Meteorology,93,3,30,0.86,Easy
+joshi-312,Thunderstorm,Thunderstorm,84,3,59,0.59,Medium
+joshi-463,Climatology of India,Climatology of India,76,4,45,0.61,Medium
+joshi-aug-951,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),92,3,25,0.81,Easy
+joshi-302,Ice Accretion,Ice Accretion,101,3,47,0.54,Medium
+joshi-331,Thunderstorm,Thunderstorm,49,3,74,0.59,Medium
+joshi-058,Atmospheric Pressure,Atmospheric Pressure,57,3,71,0.66,Medium
+joshi-aug-919,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),46,3,66,0.62,Medium
+joshi-031,Atmosphere,Atmosphere,51,3,53,0.6,Medium
+joshi-aug-948,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),92,3,26,0.87,Easy
+joshi-aug-812,Air Density,Air Density,87,3,32,0.81,Easy
+joshi-109,Temperature,Temperature,69,3,67,0.58,Medium
+joshi-425,Tropical Systems,Tropical Systems,35,3,62,0.63,Medium
+joshi-532,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),61,3,40,0.79,Easy
+joshi-540,SIGMET and AIRMET Warnings,SIGMET and AIRMET Warnings,86,3,32,0.89,Easy
+joshi-223,Vertical Motion and Clouds,Vertical Motion and Clouds,49,3,73,0.7,Medium
+joshi-aug-1009,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,150,3,111,0.34,Hard
+joshi-aug-869,Clear Air Turbulence,Clear Air Turbulence,41,4,32,0.93,Easy
+joshi-367,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,49,3,60,0.67,Medium
+joshi-452,Climatology of India,Climatology of India,51,3,62,0.55,Medium
+joshi-147,Winds,Winds,35,3,55,0.71,Medium
+joshi-aug-851,Optical Phenomena,Optical Phenomena,19,3,68,0.66,Medium
+joshi-094,Temperature,Temperature,51,3,31,0.93,Easy
+joshi-586,Altimetry and Pressure Settings,Altimetry and Pressure Settings,127,3,40,0.77,Easy
+joshi-596,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,114,3,30,0.92,Easy
+joshi-424,Tropical Systems,Tropical Systems,35,3,103,0.38,Hard
+joshi-aug-825,Humidity,Humidity,104,3,28,0.81,Easy
+joshi-184,Winds,Winds,173,3,34,0.86,Easy
+joshi-443,Tropical Systems,Tropical Systems,34,3,50,0.7,Medium
+joshi-471,Climatology of India,Climatology of India,71,3,61,0.57,Medium
+joshi-aug-979,Satellite Meteorology,Satellite Meteorology,83,3,33,0.78,Easy
+joshi-267,Optical Phenomena,Optical Phenomena,29,3,40,0.75,Easy
+joshi-047,Atmospheric Pressure,Atmospheric Pressure,28,3,61,0.69,Medium
+joshi-aug-824,Humidity,Humidity,64,3,41,0.95,Easy
+joshi-434,Tropical Systems,Tropical Systems,46,3,50,0.54,Medium
+joshi-224,Vertical Motion and Clouds,Vertical Motion and Clouds,34,3,36,0.75,Easy
+joshi-210,Vertical Motion and Clouds,Vertical Motion and Clouds,19,3,67,0.67,Medium
+joshi-570,Satellite Meteorology,Satellite Meteorology,106,3,39,0.89,Easy
+joshi-475,Climatology of India,Climatology of India,36,4,34,0.85,Easy
+joshi-014,Atmosphere,Atmosphere,39,3,60,0.55,Medium
+joshi-aug-988,Altimetry and Pressure Settings,Altimetry and Pressure Settings,111,3,42,0.92,Easy
+joshi-455,Climatology of India,Climatology of India,56,3,56,0.56,Medium
+joshi-aug-830,Humidity,Humidity,64,3,39,0.87,Easy
+joshi-551,World Area Forecast System (WAFS and SIGWX),World Area Forecast System (WAFS and SIGWX),55,3,45,0.88,Easy
+joshi-441,Tropical Systems,Tropical Systems,31,3,65,0.56,Medium
+joshi-aug-1000,Flight Weather Planning and Route Hazards,Flight Weather Planning and Route Hazards,115,3,39,0.8,Easy
+joshi-aug-802,Air Density,Air Density,79,3,73,0.71,Medium
+joshi-aug-810,Air Density,Air Density,39,3,74,0.67,Medium
+joshi-117,Temperature,Temperature,25,3,29,0.89,Easy
+joshi-064,Atmospheric Pressure,Atmospheric Pressure,43,3,37,0.93,Easy
+joshi-301,Ice Accretion,Ice Accretion,147,3,53,0.54,Medium
+joshi-201,Visibility and Fog,Visibility and Fog,26,3,100,0.37,Hard
+joshi-376,Jet Streams,Jet Streams,58,3,120,0.4,Hard
+joshi-461,Climatology of India,Climatology of India,45,4,34,0.88,Easy
+joshi-146,Winds,Winds,63,3,103,0.31,Hard
+joshi-033,Atmosphere,Atmosphere,54,3,30,0.84,Easy
+joshi-328,Thunderstorm,Thunderstorm,78,3,48,0.61,Medium
+joshi-aug-864,Clear Air Turbulence,Clear Air Turbulence,75,3,42,0.81,Easy
+joshi-122,Temperature,Temperature,81,3,35,0.84,Easy
+joshi-372,Jet Streams,Jet Streams,74,3,60,0.69,Medium
+joshi-152,Winds,Winds,14,3,64,0.64,Medium
+joshi-aug-840,Vertical Motion and Clouds,Vertical Motion and Clouds,56,3,38,0.88,Easy
+joshi-472,Climatology of India,Climatology of India,38,4,69,0.66,Medium
+joshi-309,Thunderstorm,Thunderstorm,14,3,97,0.38,Hard
+joshi-aug-910,Aerodrome Forecasts (TAF and TREND),Aerodrome Forecasts (TAF and TREND),57,3,66,0.57,Medium
+joshi-011,Atmosphere,Atmosphere,15,3,49,0.65,Medium
+joshi-167,Winds,Winds,39,3,84,0.5,Hard
+joshi-342,Airmasses Fronts and Western Disturbances,Airmasses Fronts and Western Disturbances,63,3,33,0.83,Easy
+joshi-192,Visibility and Fog,Visibility and Fog,20,3,71,0.66,Medium
+joshi-007,Atmosphere,Atmosphere,23,3,37,0.8,Easy
